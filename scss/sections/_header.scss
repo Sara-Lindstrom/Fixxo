@@ -1,0 +1,114 @@
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // navigation menu md and bigger
+    .navigation-menu {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+
+        list-style-type: none;
+        padding:0;
+
+        .navigation-menu-item {
+            display:none;
+            margin-right: 1rem;
+            
+
+            &:last-child{
+            margin-right: 0rem;
+            }
+
+            @include md {
+                display:initial;
+            }
+        }
+
+    }
+
+    .group {
+        display: flex;
+        justify-items: space-between;
+
+        a{
+            margin-right: 1rem;
+
+            &:last-child {
+                margin-right: none;
+            }
+        }
+
+
+        .search {
+            i {
+                display:none;
+            }
+
+            input {
+                display:none;
+            }
+        }
+
+        .dropdown-navigation-menu {
+            @include md {
+                display:none;
+            }
+
+            .dropdown-menu {
+                background-color: transparent;
+                font-size: $font-size-13;
+            }
+        }
+    }
+}
+
+.showcase{
+    background-color: $color-gray-30;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
+
+    img {
+        display:none;
+
+        @include md {
+            display:initial;
+            max-width: 30vw;
+        }
+    }
+
+    .group {
+        text-align: center;
+        padding: 0 1rem;
+        padding: 2rem 0;
+
+        @include md {
+            padding: none;
+        }
+
+        h2 {
+            font-size: $font-size-45;
+            font-weight: $font-weight-extra-bold;
+
+            @include lg {
+                font-size: $font-size-65;
+            }
+        }
+
+        p{
+            font-size: $font-size-18;
+            font-weight: $font-weight-medium;
+            margin: 1rem 0;
+
+            @include lg {
+                font-size: $font-size-20;
+            }
+        }
+
+    }
+}

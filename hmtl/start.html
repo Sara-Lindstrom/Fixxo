@@ -7,30 +7,64 @@
     <title>Tutorial</title>
     <script src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="../css/style.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"defer></script>
     <script src="script.js"defer></script>
 </head>
 <body>
+    <!-- Navigation bar -->
     <header class="container header">
+        <!-- logo -->
         <a href="#"><img src="../img/Fixxo.svg" alt="Fixxo."></a>
 
-        <ul class="navigation-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contacts</a></li>
-        </ul> 
+        <!-- navigation menu md and bigger -->
+            <ul class="navigation-menu">
+                <li class="navigation-menu-item"><a href="../hmtl/start.html">Home</a></li>
+                <li class="navigation-menu-item"><a href="#">Categories</a></li>
+                <li class="navigation-menu-item"><a href="../hmtl/product.html">Products</a></li>
+                <li class="navigation-menu-item"><a href="../hmtl/contact.html">Contacts</a></li>
+            </ul>             
+
 
         <nav class="group">
+            <!-- search bar -->
             <div class="search">
-                <i src="../img/search-icon.svg" alt:="search icon"></i>
-                <i class="fa-light fa-xmark"></i>
+                <button class="b-circle"><img src="../img/search-icon.svg" alt:="search button"></button>
+                <i class="fa-light fa-xmark" alt="close button"></i>
                 <input class="search-input" type="text">
             </div>
 
+            <!-- account menu -->
+            <button class="b-circle"><img src="../img/share-icon.svg" alt="share button"></button>
+            <button class="b-circle"><img src="../img/wishlist-icon.svg" alt="whishlist button"></button>
+            <button class="b-circle"><img src="../img/cart-icon.svg" alt="shopping-cart button"></button>
+
+            <!-- mobile navigation menu -->
+            <nav class="dropdown-navigation-menu">
+                <button class="b-circle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-bars me-md-3"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">home</a></li>
+                    <li><a class="dropdown-item" href="#">Categories</a></li>
+                    <li><a class="dropdown-item" href="#">Products</a></li>
+                    <li><a class="dropdown-item" href="#">Contacts</a></li>
+                </ul>                
+            </nav>
         </nav>
     </header>
+    <!-- showcase -->
+    <main>
+        <div class="showcase">
+            <img src="../img/showcase-left.svg" alt="showcase picture">
+            <div class="group"> 
+                <h2>SALE UP<br>To 50% off</h2>
+                <p>online shopping free home delivery over $100</p>
+                <button class="button buttondecor b-theme">SHOP NOW</button>
+            </div>
+            <img src="../img/showcase-right.svg" alt="showcase picture">
+        </div>
+    </main>
 
     
 </body>
