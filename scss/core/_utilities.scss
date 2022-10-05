@@ -1,0 +1,47 @@
+.html, body {
+    font-family: $font-poppins;
+    font-weight: $font-weight-regular;
+    color: $color-dark;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.7rem;
+
+    @include md {
+        max-width: $breakpoint-md-max-width;
+    }
+    @include lg {
+        max-width: $breakpoint-lg-max-width;
+    }
+    @include xl {
+        max-width: $breakpoint-xl-max-width;
+    }
+    @include xxl {
+        max-width: $breakpoint-xxl-max-width;
+    }
+}
+
+
+.container-fluid {
+    max-width: 100vw;
+}
+
+// QUICK HELP
+.hidden-text{
+    display:none;
+
+    @include md {
+        display:inline;
+    }
+}
+
+.d-flex { display: flex;}
+.d-initial {display: initial;}
+
+// LINKS
+a {
+    text-decoration: none;
+    transition: color 300ms;
+}
