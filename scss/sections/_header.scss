@@ -1,8 +1,15 @@
 .header {
-    position: sticky;
+    position: fixed;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.185);
+    border-radius: 5rem;
+    padding:0 2rem;
 
     // navigation menu md and bigger
     .navigation-menu {
@@ -10,8 +17,6 @@
         justify-content: space-between;
         margin-top: auto;
         margin-bottom: auto;
-        
-
         list-style-type: none;
         padding:0;
 
@@ -31,6 +36,7 @@
 
     }
 
+    // my account and search
     .group {
         display: flex;
         justify-items: space-between;
@@ -54,6 +60,7 @@
             }
         }
 
+        // mobile navigation menu
         .dropdown-navigation-menu {
             @include md {
                 display:none;
@@ -64,51 +71,5 @@
                 font-size: $font-size-13;
             }
         }
-    }
-}
-
-.showcase{
-    background-color: $color-gray-30;
-    justify-content: space-between;
-    align-items: center;
-    display:flex;
-
-    img {
-        display:none;
-
-        @include md {
-            display:initial;
-            max-width: 30vw;
-        }
-    }
-
-    .group {
-        text-align: center;
-        padding: 0 1rem;
-        padding: 2rem 0;
-
-        @include md {
-            padding: none;
-        }
-
-        h2 {
-            font-size: $font-size-45;
-            font-weight: $font-weight-extra-bold;
-
-            @include lg {
-                font-size: $font-size-65;
-            }
-        }
-
-        p{
-            font-size: $font-size-18;
-            font-weight: $font-weight-medium;
-            margin: 1rem 0;
-
-            @include lg {
-                font-size: $font-size-20;
-            }
-        }
-
     }
 }

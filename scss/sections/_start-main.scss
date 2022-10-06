@@ -1,0 +1,121 @@
+// showcase
+.showcase{
+    padding-top: 5rem;
+    display:flex;
+    background-color: $color-gray-30;
+    justify-content: center;
+    align-items: center;
+
+    @include lg {
+        
+    justify-content: space-between;
+    }
+
+    img {
+        display:none;
+
+        @include md {
+            display:flex;
+            max-width: 30vw;
+        }
+    }
+
+    // showcase info
+    .group {
+        text-align: center;
+        padding: 2rem 1rem;
+
+        @include md {
+            padding: none;
+        }
+
+        h2 {
+            font-size: $font-size-45;
+            font-weight: $font-weight-extra-bold;
+
+            @include lg {
+                font-size: $font-size-65;
+            }
+        }
+
+        p{
+            font-size: $font-size-18;
+            font-weight: $font-weight-medium;
+            margin: 1rem 0;
+
+            @include lg {
+                font-size: $font-size-20;
+            }
+        }
+    }
+}
+
+// claearance and arrivals
+.clearance-arrivals {
+    @include md {
+        display: flex;
+    }
+
+    .background {
+        display: flex;
+        position: relative;
+        margin: 1rem auto;
+        justify-content: right;
+
+        img {
+            max-height: 30vh;
+            max-width: 100%;
+
+            @include md {
+                max-height: 20vh;
+            }
+
+            @include lg {
+                max-height: initial;
+            }
+        }
+        .info {
+            position: absolute;
+            width: 50%;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+
+            h2 {
+                font-size: $font-size-18;
+                font-weight: $font-weight-bold;
+
+                @include lg {
+                    font-size: $font-size-45;
+                }
+            }
+            p {
+                display:none;
+
+                @include lg {
+                    display: block;
+                }
+            }
+            .button {
+                font-size: $font-size-13;
+                font-weight: $font-weight-medium;
+                padding: 0.5rem 2rem;
+
+                @include lg {
+                    font-size: initial;
+                    font-weight: initial;
+                    padding: 0.8rem 3rem;
+                }
+
+            }
+        }
+    }
+
+    .clearance {
+        background-color:#CAC0BE;
+    }
+
+    .arrivals {
+        background-color:#E9E9E9;
+    }
+}

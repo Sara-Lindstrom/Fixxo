@@ -62,24 +62,22 @@ a {
 
 // BUTTONS
 .button {
-    padding:1rem 3rem;
+    padding:0.8rem 3rem;
     border:none;
     font-family: $font-poppins;
     font-size: $font-size-16;
     font-weight: $font-weight-semibold;
-}
 
-.buttondecor{
-    background-image: url('../img/button-decor.svg');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
 }
 
 .b-theme {
     background-color: $color-theme;
     color: white;
+}
 
+.b-dark {
+    background-color: $color-dark;
+    color: white;
 }
 
 .b-circle {
@@ -101,3 +99,5 @@ a {
         }
     }
 }
+
+// PRODUCT CARDS
