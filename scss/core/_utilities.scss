@@ -42,6 +42,11 @@ a{
     }
 }
 
+ul {
+    list-style: none;
+    max-width: fit-content;
+}
+
 // QUICK HELP
 .hidden-text{
     display:none;
@@ -50,9 +55,6 @@ a{
         display:inline;
     }
 }
-
-.d-flex { display: flex;}
-.d-initial {display: initial;}
 
 // LINKS
 a {
@@ -67,7 +69,6 @@ a {
     font-family: $font-poppins;
     font-size: $font-size-16;
     font-weight: $font-weight-semibold;
-
 }
 
 .b-theme {
@@ -80,11 +81,16 @@ a {
     color: white;
 }
 
+.b-light {
+    background-color: white;
+    color: dark;
+}
+
 .b-circle {
     border-radius: 50%;
     background-color: $color-gray-10;
     border:none;
-    box-shadow: 0px 2px 3px 0px $color-gray-20;
+    box-shadow: 0px 2px 3px 0px $color-gray-50;
     transition: background-color 500ms;
 
     img {
@@ -100,4 +106,150 @@ a {
     }
 }
 
+// HEADLINE
+.headline {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: $font-size-20;
+    font-weight: $font-weight-bold;
+}
+
 // PRODUCT CARDS
+.container{
+    .card {
+        border:none;
+        margin: 1rem 0;
+        max-width: fit-content;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            .card-options {
+                left:0;
+            }
+        }
+
+        .card-background {
+            object-fit: contain;
+            img {
+                max-width: 40vw;
+            }
+        }
+
+        .product-info {
+            .category {
+                font-size: $font-size-13;
+                font-weight: $font-weight-medium;
+                color: $color-gray-70;
+                margin:0.2rem;
+
+                @include lg {
+                    font-size: $font-size-13;
+                    font-weight: $font-weight-regular;
+                }
+            }
+
+            .product-name {
+                font-size: $font-size-13;
+                font-weight: $font-weight-semibold;
+                color: $color-dark;
+                margin:0.2rem;
+
+                @include md {
+                    font-size: $font-size-16;
+                }
+            }
+
+            .star-rating {
+                color: $color-theme;
+                font-size: $font-size-13;
+                margin: 0.5rem 0;
+
+                i {    
+                margin:0 0.1rem;
+                }
+            }
+
+            .disscount-price {
+                display:inline;
+                margin-right: 0.5rem;
+                font-size: $font-size-13;
+
+                
+                @include md {
+                 font-size: $font-size-16;   
+                }
+
+                @include lg {
+                    font-size: $font-size-18;
+                }
+            } 
+
+            .original-price {
+                display:inline;
+                font-size: $font-size-13;
+
+                
+                @include md {
+                 font-size: $font-size-16;   
+                }
+
+                @include lg {
+                    font-size: $font-size-18;
+                }
+            }
+        }
+
+        .card-options{
+            position: absolute;
+            height: 67%;
+            width: 100%;
+            background-color: transparent;
+            transition: left 500ms;
+
+            @include lg {
+                background-color: #7e7f806c;
+                left: 100%;
+            }
+
+            ul {  
+                position: absolute;
+                top:0.3rem;
+                right:1rem;
+                display: flex;
+                justify-content: space-between;
+
+                
+                @include md {
+                 top:1rem;
+                 display:initial;
+                }
+
+                li{
+                    margin: 0.5rem;
+                }
+            }
+
+            .button {
+                position: absolute;
+                width: 100%;
+                bottom: 1.5rem;
+                left:0;
+                font-size: 0.7rem;
+                padding:0.3rem;
+
+                
+                @include md {
+                    bottom: 0;
+                    padding:0.8rem 3rem;  
+                }
+
+
+                @include lg {
+                    font-size: initial;
+                }
+            }
+        }
+    }    
+}
