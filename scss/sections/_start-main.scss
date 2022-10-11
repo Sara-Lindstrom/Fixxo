@@ -50,7 +50,7 @@
     }
 }
 
-// claearance and arrivals
+// winter clearance and new arrivals
 .clearance-arrivals {
 
     @include md {
@@ -125,6 +125,7 @@
     }
 }
 
+// Pamela reif and lets be conscious
 .pamela-reif-lets-be-conscious {
     margin-top: 2rem;
     @include md {
@@ -189,22 +190,23 @@
     }
 }
 
+// Order info speciality
 .our-speciality {
     background-color: $color-gray-30;
     padding: 0.5rem;
     margin-top: 2rem;
 
     @include lg {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .flex {
         gap: 0.5rem;
         justify-content: center;
-        margin-top: 1rem;
+        align-items: stretch;
 
         @include lg {
-            gap:2rem;
+            gap:1rem;
             margin-top: 1.5rem;
         }
 
@@ -212,7 +214,7 @@
             flex:1;
             display: flex;
             justify-content: space-between;
-            max-width: fit-content;
+            align-items: center;
             background-color: white;
 
             .info {
@@ -220,15 +222,6 @@
                 padding: 1.5rem 0.5rem;
                 text-align: center;
                 position: relative;
-                height: 100%;
-                width: 100%;
-
-                @include lg {
-                    height: fit-content;
-                    width: fit-content;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
 
                 p {
                     font-size: $font-size-13;
@@ -254,6 +247,7 @@
                         font-size: $font-size-16;
                         font-weight: $font-weight-semibold;
                         position:static;
+                        
                     }
                 }
             }
@@ -261,22 +255,20 @@
             img {
                 flex: 1;
                 display: none;
-                flex:1;
-                max-height: 100%;
-                max-width: 40%;
-                object-fit: contain;
-                margin-right: 0.5rem;
 
                 @include md {
-                    display: inline;                
+                    display: inline;   
+                    max-width: 50%;
+                    max-height: 100%;
+                    object-fit: contain;           
                 }
 
                 @include lg {
-                    max-width: 90%;
-                    max-height: 90%;
-                    object-fit: cover;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
                     margin: auto;
-                    margin-right: 0.5rem;
+                    margin:0;
                 }
             }
         }        
@@ -284,11 +276,13 @@
     
 }  
 
+// sale showcase left and right
 .sale-showcase {
     @include lg {
         display: flex;
-        align-items: center;
+        align-items: left;
         gap: 1rem;
+        width: 80vw;
     }
 
     .big-sale-showcase {
