@@ -86,8 +86,8 @@ a {
     &::after{
         position: absolute;
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 
     &::before{
@@ -115,8 +115,8 @@ a {
     &::after{
         position: absolute;
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 
     &::before{
@@ -144,8 +144,8 @@ a {
     &::after{
         position: absolute;
         content: '';
-        width: 20px;
-        height: 20px;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 
     &::before{
@@ -207,21 +207,77 @@ a {
         margin: 1rem 0;
         max-width: fit-content;
         text-align: center;
-        position: relative;
-        overflow: hidden;
 
         &:hover {
-            .card-options {
+            .card-background{
+                .card-options {
                 left:0;
+                }
             }
         }
 
         .card-background {
-            max-width: 40vw;
+            max-width: 40vw;              
+            position: relative;
+            overflow: hidden;
+
             img {
                 max-width: 100%;
                 max-height: 100%;
                 object-fit: contain;
+            }
+
+            .card-options{
+                position: absolute;
+                top: 0;
+                left:0;
+                height: 100%;
+                width: 100%;
+                background-color: transparent;
+                transition: left 500ms;
+    
+                @include lg {
+                    background-color: #7e7f806c;
+                    left: 100%;
+                }
+    
+                ul {  
+                    position: absolute;
+                    display: flex;
+                    justify-content: space-between;
+                    padding:0;
+    
+                    
+                    @include md {
+                     top:1rem;
+                     right:1rem;
+                     display:initial;
+                    }
+    
+                    li{
+                        margin: 0.5rem;
+                    }
+                }
+    
+                .button {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left:0;
+                    font-size: 0.7rem;
+                    padding:0.3rem;
+    
+                    
+                    @include md {
+                        bottom: 0;
+                        padding:0.8rem 3rem;  
+                    }
+    
+    
+                    @include lg {
+                        font-size: initial;
+                    }
+                }
             }
         }
 
@@ -285,57 +341,6 @@ a {
 
                 @include lg {
                     font-size: $font-size-18;
-                }
-            }
-        }
-
-        .card-options{
-            position: absolute;
-            height: 67%;
-            width: 100%;
-            background-color: transparent;
-            transition: left 500ms;
-
-            @include lg {
-                background-color: #7e7f806c;
-                left: 100%;
-            }
-
-            ul {  
-                position: absolute;
-                top:0.3rem;
-                right:1rem;
-                display: flex;
-                justify-content: space-between;
-
-                
-                @include md {
-                 top:1rem;
-                 display:initial;
-                }
-
-                li{
-                    margin: 0.5rem;
-                }
-            }
-
-            .button {
-                position: absolute;
-                width: 100%;
-                bottom: 1.5rem;
-                left:0;
-                font-size: 0.7rem;
-                padding:0.3rem;
-
-                
-                @include md {
-                    bottom: 0;
-                    padding:0.8rem 3rem;  
-                }
-
-
-                @include lg {
-                    font-size: initial;
                 }
             }
         }

@@ -282,8 +282,6 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        width: 80vw;
-        height: fit-content;
     }
 
     .big-sale-showcase {
@@ -322,25 +320,10 @@
     .small-sale-showcase {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        width: 30vw;
-        padding:2rem 0;
 
         @include lg {
             gap:1rem;
-        }
-
-        .card {
-            .card-options{
-                height:60%;
-
-                ul {
-                    right:0.5rem;
-                    top:0.3rem;
-                    li{
-                        margin: 0.2rem 0;
-                    }
-                }
-            }
+            width: 40%;
         }
     }
 }
@@ -401,63 +384,86 @@
 
 // latest, best selling and top reacted product
 .product-rows{
+    text-align: center;
+
+    @include lg {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .featured-row {
+        display: initial;
+
         .card {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-row: auto;
+            gap:1rem;
+            margin: 2rem auto;
 
 
             &:hover {
-                .card-options{
-                    top:0;
-
-                    ul {
-                        top: 0.5rem;
-                        left: 0.5rem;
-                    }
-
-                    .button {
+                .card-background {
+                    .card-options{
                         left:0;
-                    }
+                    }                    
                 }
+
             }
 
             .card-background {
                 position: relative;
                 max-width: fit-content;
                 overflow: hidden;
+                transition: left 500ms;
 
                 .card-options{
                     position:absolute;
                     height: 100%;
                     width: 100%;
                     top:0;
+                    left:0;
+                    background-color: transparent;
+                    transition: left 500ms;
+                        
+        
+                    @include lg {
+                        background-color: #7e7f806c;
+                        left: 100%;
+                    }
 
                     ul {
-                        position: relative;
-                        top: 0.5rem;
-                        left: 110%;
+                        position: absolute;
+                        top: 0;
                         padding-left: 0;
+                        display: flex;
+
+                        @include md {
+                            display: flex;
+                            left:0.5rem;
+                        }
+
+                        @include lg {
+                            display: initial;                     
+                        }
                     }
 
                     .button {
                         position: absolute;
-                        left:110%;
+                        left: 0;
                         width: 100%;
                         bottom: 0;
                         vertical-align: bottom;
 
+                        @include lg {
+                            font-size:0.7rem; 
+                            padding:0.5rem 1rem;                        
+                        }
+
                     }
                 }
             }
-
-            .product-info {
-
-            }
-
-
         }
     }
 }
