@@ -78,16 +78,88 @@ a {
 .b-theme {
     background-color: $color-theme;
     color: white;
+
+    // decoration
+    position:relative;
+
+    &::before,
+    &::after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+    }
+
+    &::before{
+        left:0.4rem;
+        top:0.4rem;
+        border-left:2px solid white;
+        border-top:2px solid white;
+    }
+    &::after{
+        right:0.4rem;
+        bottom:0.4rem;
+        border-right:2px solid white;
+        border-bottom:2px solid white;
+    }
 }
 
 .b-dark {
     background-color: $color-dark;
     color: white;
+
+    // decoration
+    position:relative;
+
+    &::before,
+    &::after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+    }
+
+    &::before{
+        left:0.4rem;
+        top:0.4rem;
+        border-left:2px solid white;
+        border-top:2px solid white;
+    }
+    &::after{
+        right:0.4rem;
+        bottom:0.4rem;
+        border-right:2px solid white;
+        border-bottom:2px solid white;
+    }
 }
 
-.b-light {
+.b-dark {
     background-color: white;
-    color: dark;
+    color: $color-dark;
+
+    // decoration
+    position:relative;
+
+    &::before,
+    &::after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+    }
+
+    &::before{
+        left:0.4rem;
+        top:0.4rem;
+        border-left:2px solid $color-dark;
+        border-top:2px solid $color-dark;
+    }
+    &::after{
+        right:0.4rem;
+        bottom:0.4rem;
+        border-right:2px solid $color-dark;
+        border-bottom:2px solid $color-dark;
+    }
 }
 
 .b-circle {
@@ -145,9 +217,11 @@ a {
         }
 
         .card-background {
-            object-fit: contain;
+            max-width: 40vw;
             img {
-                max-width: 40vw;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
             }
         }
 

@@ -280,9 +280,10 @@
 .sale-showcase {
     @include lg {
         display: flex;
-        align-items: left;
+        align-items: center;
         gap: 1rem;
         width: 80vw;
+        height: fit-content;
     }
 
     .big-sale-showcase {
@@ -297,8 +298,7 @@
         }
 
         @include lg {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 50vw;
             left:0;
             transform: initial;
         }
@@ -321,9 +321,143 @@
 
     .small-sale-showcase {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        width: 30vw;
+        padding:2rem 0;
 
         @include lg {
             gap:1rem;
+        }
+
+        .card {
+            .card-options{
+                height:60%;
+
+                ul {
+                    right:0.5rem;
+                    top:0.3rem;
+                    li{
+                        margin: 0.2rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 70% off
+.sale {
+    position: relative;
+    height: fit-content;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .info {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50% , -50%);
+        color: white;
+        text-align: center;
+        width: 100%;
+
+        h4 {
+            font-size: $font-size-18;
+            margin:0;
+
+            @include md {
+                font-size: $font-size-45;
+            }
+        }
+
+        p {
+            font-size: 0.7rem;
+            margin:0.3rem;
+
+            @include md {
+                font-size: $font-size-16;
+                margin: 0.8rem;
+            }
+        }
+
+        button {
+            font-size: $font-size-13;
+            padding: 0.3rem 1rem;
+
+            @include md {
+                font-size: $font-size-16;
+                padding:0.8rem 3rem;
+            }
+        }
+
+    }
+}
+
+// latest, best selling and top reacted product
+.product-rows{
+
+    .featured-row {
+        .card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row: auto;
+
+
+            &:hover {
+                .card-options{
+                    top:0;
+
+                    ul {
+                        top: 0.5rem;
+                        left: 0.5rem;
+                    }
+
+                    .button {
+                        left:0;
+                    }
+                }
+            }
+
+            .card-background {
+                position: relative;
+                max-width: fit-content;
+                overflow: hidden;
+
+                .card-options{
+                    position:absolute;
+                    height: 100%;
+                    width: 100%;
+                    top:0;
+
+                    ul {
+                        position: relative;
+                        top: 0.5rem;
+                        left: 110%;
+                        padding-left: 0;
+                    }
+
+                    .button {
+                        position: absolute;
+                        left:110%;
+                        width: 100%;
+                        bottom: 0;
+                        vertical-align: bottom;
+
+                    }
+                }
+            }
+
+            .product-info {
+
+            }
+
+
         }
     }
 }
