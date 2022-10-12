@@ -60,6 +60,10 @@ ul {
     }
 }
 
+.aktive-navigation-text{
+    color: $color-theme;
+}
+
 // LINKS
 a {
     text-decoration: none;
@@ -133,7 +137,7 @@ a {
     }
 }
 
-.b-dark {
+.b-light {
     background-color: white;
     color: $color-dark;
 

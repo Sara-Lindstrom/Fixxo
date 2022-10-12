@@ -64,6 +64,10 @@
         margin: 1rem 0;
         justify-content: right;
 
+        @include lg {
+            margin: 3rem 0;
+        }
+
         img {
             max-height: 30vh;
             max-width: 100%;
@@ -313,6 +317,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+
+            h4 {  
+            color: white;
+            font-size: $font-size-20;
+            font-weight: $font-weight-bold;
+
+            @include lg {
+            font-size: $font-size-45;
+            }
+            }
         }
 
     }

@@ -1,7 +1,7 @@
-hr {
-    margin-bottom: 0;
-}
+
 .footer-background {
+    border-top: 1px $color-gray-40 solid;
+    justify-self: baseline;
     background-color: $color-gray-20;
     padding: 1rem;
     text-align: center;
@@ -24,3 +24,15 @@ hr {
         color: $color-gray-60;
     }
 }
+
+.footer-shirt-page{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+
+    @include lg {
+        position: static;
+    }
+}
+
+
