@@ -1,0 +1,26 @@
+hr {
+    margin-bottom: 0;
+}
+.footer-background {
+    background-color: $color-gray-20;
+    padding: 1rem;
+    text-align: center;
+    font-family: $font-poppins;
+
+    .social-media-links {
+        margin: 0.8rem;
+
+        a {
+            margin-right: 1rem;
+
+            &:last-child{
+                margin-right: 0rem;
+            }
+        }
+    }
+
+    p {
+        font-size: $font-size-13;
+        color: $color-gray-60;
+    }
+}

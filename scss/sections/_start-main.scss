@@ -468,3 +468,54 @@
     }
 }
 
+// line break
+.container{
+    .line-break {
+        margin-top: 2rem;
+    }
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    @include md {
+        display: flex;
+    }
+
+    .group{
+        margin:1rem;
+
+        button {
+            padding: 0.5rem;
+            margin: 1rem;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        h6 {
+            font-size: $font-size-16;
+            font-weight: $font-weight-bold;
+
+            @include lg {
+                font-size: $font-size-20;   
+            }
+        }
+
+        p{
+            font-size: $font-size-13;
+            font-weight: $font-weight-regular;
+
+            @include lg {
+                font-size: $font-size-16;   
+            }
+        }
+    }
+}
