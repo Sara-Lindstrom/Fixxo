@@ -79,9 +79,24 @@ a {
     font-weight: $font-weight-semibold;
 }
 
-.b-theme {
+.theme-button {
     background-color: $color-theme;
     color: white;
+    transition: color 300ms;
+
+    &:hover{
+        color: $color-dark;
+
+        &::before {
+            border-left:2px solid $color-dark;
+            border-top:2px solid $color-dark;
+        }
+        
+        &::after{
+            border-right:2px solid $color-dark;
+            border-bottom:2px solid $color-dark;
+        }
+    }
 
     // decoration
     position:relative;

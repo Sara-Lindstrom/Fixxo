@@ -1,0 +1,50 @@
+.showcase{
+    padding-top: 5rem;
+    display:flex;
+    background-color: $color-gray-30;
+    justify-content: center;
+    align-items: center;
+
+    @include lg {
+        
+    justify-content: space-between;
+    }
+
+    img {
+        display:none;
+
+        @include md {
+            display:flex;
+            max-width: 30vw;
+        }
+    }
+
+    // showcase info
+    .group {
+        text-align: center;
+        padding: 2rem 1rem;
+
+        @include md {
+            padding: none;
+        }
+
+        h2 {
+            font-size: $font-size-45;
+            font-weight: $font-weight-extra-bold;
+
+            @include lg {
+                font-size: $font-size-65;
+            }
+        }
+
+        p{
+            font-size: $font-size-18;
+            font-weight: $font-weight-medium;
+            margin: 1rem 0;
+
+            @include lg {
+                font-size: $font-size-20;
+            }
+        }
+    }
+}
