@@ -1,0 +1,87 @@
+.header {
+    position: fixed;
+    top:1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.185);
+    border-radius: 5rem;
+    padding:0 2rem;
+    z-index: 10;
+
+    // navigation menu md and bigger
+    .navigation-menu {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        padding:0;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        .navigation-menu-item {
+            display:none;
+            margin-right: 1rem;
+            
+
+            &:last-child{
+            margin-right: 1rem;
+            }
+
+            @include md {
+                display:initial;
+            }
+        }
+
+    }
+
+    // my account and search
+    .group {
+        display: flex;
+        justify-items: space-between;
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: fit-content;
+
+        button {
+            margin-right: 0.5rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        li{
+            margin:auto;
+
+            &:last-child {
+                margin-right: none;
+            }
+        }
+
+        .search {
+            i {
+                display:none;
+            }
+
+            input {
+                display:none;
+            }
+        }
+
+        // mobile navigation menu
+        .dropdown-navigation-menu {
+
+            @include md {
+                display:none;
+            }
+
+            .dropdown-menu {
+                font-size: $font-size-13;
+            }
+        }
+    }
+}
