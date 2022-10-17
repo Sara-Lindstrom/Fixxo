@@ -33,6 +33,10 @@
             @include md {
                 display:initial;
             }
+            
+            .active {
+                color: $color-theme;
+            }
         }
 
     }
@@ -40,19 +44,11 @@
     // my account and search
     .group {
         display: flex;
-        justify-items: start;
+        justify-items: space-between;
         align-items: center;
         margin-top: auto;
         margin-bottom: auto;
         height: fit-content;
-
-        .navigationbutton {
-            margin-right: 1rem;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
 
         li{
             margin:auto;
@@ -81,6 +77,15 @@
 
             .dropdown-menu {
                 font-size: $font-size-13;
+                background-color: rgba(255, 255, 255, 0.185);
+
+                .dropdown-item {
+                    background-color: rgba(255, 255, 255, 0.185);
+
+                }                    
+                .active {
+                    color: $color-theme;
+                }
             }
         }
     }
