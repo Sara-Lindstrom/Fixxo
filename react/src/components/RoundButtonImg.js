@@ -1,10 +1,14 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const RoundButtonImg = ({image}) => {
+const RoundButtonImg = ({link, image}) => {
   return (
-    <button className="round-button">
-        <img src={image} alt=""/>
-    </button>
+    <NavLink to={link}>
+      <button className="round-button">
+          <img src={image} alt=""/>
+      </button>      
+    </NavLink>
+
   )
 }
 
