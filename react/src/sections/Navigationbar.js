@@ -1,27 +1,35 @@
 import React from 'react';
+import { useState } from 'react';
 import fixxoLogo from '../assets/img/Fixxo.svg';
 import searchIcon from '../assets/img/search-icon.svg';
 import shareIcon from '../assets/img/share-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import cartIcon from '../assets/img/cart-icon.svg';
 import RoundButtonImg from '../components/RoundButtonImg';
-import RoundButtonIcon from '../components/RoundButtonIcon';
 import { NavLink } from 'react-router-dom';
 
 const Navigationbar = () => {
+
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
     <header className="container header">
       {/* LOGO */}
-        <NavLink to="/"><img src={fixxoLogo} alt="Fixxo."/></NavLink>
+        <NavLink className="logo" to="/"><img src={fixxoLogo} alt="Fixxo."/></NavLink>
 
-        {/* navigation menu md and bigger */}
-        <ul className="navigation-menu">
-            <li className="navigation-menu-item"><NavLink to="/" end>Home</NavLink></li>
-            <li className="navigation-menu-item"><NavLink to="/categories" end>Categories</NavLink></li>
-            <li className="navigation-menu-item"><NavLink to="/products" end>Products</NavLink></li>
-            <li className="navigation-menu-item"><NavLink to="/contacts" end>Contacts</NavLink></li>
-        </ul>             
-
+        {/* navigation menu*/}
+        <div className={`dropdown-navigation-menu ${ showMenu ? "d-grid" : ""}`}>        
+          <nav className="navigation-menu">
+              <NavLink className="navigation-menu-item" to="/" end>Home</NavLink>
+              <NavLink className="navigation-menu-item" to="/categories" end>Categories</NavLink>
+              <NavLink className="navigation-menu-item" to="/products" end>Products</NavLink>
+              <NavLink className="navigation-menu-item" to="/contacts" end>Contacts</NavLink>           
+          </nav>             
+        </div>
 
         <nav className="group">
             {/* search bar */}
@@ -37,16 +45,7 @@ const Navigationbar = () => {
             <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={3}></RoundButtonImg>
             <RoundButtonImg link="/shoppingcart" image={cartIcon} notificationNumber={12}></RoundButtonImg>
 
-            {/* mobile navigation menu */}
-            <nav className="dropdown-navigation-menu">
-                <RoundButtonIcon icon="fa-regular fa-bars me-md-3" dataBsToggle="dropdown" ae="false"></RoundButtonIcon>
-                <ul className="dropdown-menu">
-                    <li><NavLink className="dropdown-item" to="/" end>home</NavLink></li>
-                    <li><NavLink className="dropdown-item" to="/categories" end>Categories</NavLink></li>
-                    <li><NavLink className="dropdown-item" to="/products" end>Products</NavLink></li>
-                    <li><NavLink className="dropdown-item" to="/contacts" end>Contacts</NavLink></li>
-                </ul>                
-            </nav>
+            <button onClick={toggleMenu} className="round-button dropdown-navigation-button"><i className="fa-regular fa-bars"></i></button>
         </nav>
     </header>
   )

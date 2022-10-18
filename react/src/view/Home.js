@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductCard from '../components/ProductCard';
 import Footer from '../sections/Footer';
 import Navigationbar from './../sections/Navigationbar'; 
 import Showcase from './../sections/Showcase';
@@ -8,6 +9,7 @@ const Home = () => {
     <>
         <Navigationbar />
         <Showcase />
+        <ProductCard/>
         <Footer/>
     </>
   )

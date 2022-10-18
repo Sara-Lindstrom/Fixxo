@@ -3,60 +3,91 @@
     top:1rem;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     backdrop-filter: blur(8px);
     background-color: rgba(255, 255, 255, 0.185);
     border-radius: 5rem;
     padding:0 2rem;
     z-index: 10;
 
-    // navigation menu md and bigger
-    .navigation-menu {
+    @include lg {
         display: flex;
         justify-content: space-between;
-        list-style-type: none;
-        padding:0;
-        margin-top: auto;
-        margin-bottom: 0.3rem;
+        align-items: center;
+    }
 
-        .navigation-menu-item {
-            display:none;
-            margin-right: 1rem;
-            
+    .logo {
+        grid-column: 1;
+        grid-row: 1;
+    }
 
-            &:last-child{
-            margin-right: 1rem;
+    .dropdown-navigation-menu{
+        position: absolute;
+        top:100%;
+        right:0;
+        padding:1rem;
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.185);
+        display: none;
+
+        @include lg {
+            display:inline;
+            position: initial;
+            backdrop-filter: none;
+            background-color: transparent;
+        }
+
+        .navigation-menu {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            padding:0;
+            margin-top: auto;
+            margin-bottom: 0.3rem;
+    
+            @include lg {
+                flex-direction: row;
+                justify-content: space-between;
             }
+    
+            .navigation-menu-item {
+                margin-right: 1rem;
+                
+    
+                &:last-child{
+                margin-right: 1rem;
+                }
+    
+                @include md {
+                    display:initial;
+                }
+                
 
-            @include md {
-                display:initial;
-            }
-            
+            }   
+
             .active {
                 color: $color-theme;
             }
+    
         }
-
     }
+
 
     // my account and search
     .group {
+        grid-column: 2;
+        grid-area: 1;
         display: flex;
         justify-items: space-between;
         align-items: center;
+        justify-self: end;
         margin-top: auto;
         margin-bottom: auto;
         height: fit-content;
-
-        li{
-            margin:auto;
-
-            &:last-child {
-                margin-right: none;
-            }
-        }
 
         .search {
             i {
@@ -68,24 +99,9 @@
             }
         }
 
-        // mobile navigation menu
-        .dropdown-navigation-menu {
-
-            @include md {
-                display:none;
-            }
-
-            .dropdown-menu {
-                font-size: $font-size-13;
-                background-color: rgba(255, 255, 255, 0.185);
-
-                .dropdown-item {
-                    background-color: rgba(255, 255, 255, 0.185);
-
-                }                    
-                .active {
-                    color: $color-theme;
-                }
+        .dropdown-navigation-button {
+            @include lg {
+                display: none;
             }
         }
     }

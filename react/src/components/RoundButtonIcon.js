@@ -1,8 +1,8 @@
 import React from 'react'
 
-const RoundButtonIcon = ({icon, dataBsToggle, ae}) => {
+const RoundButtonIcon = ({icon}) => {
     return (
-      <button className="round-button" data-bs-toggle={dataBsToggle} aria-expanded={ae}>
+      <button className="round-button">
           <i className={icon}></i>
       </button>
     )
