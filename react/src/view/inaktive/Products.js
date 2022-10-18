@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../../sections/Footer';
 import Navigationbar from './../../sections/Navigationbar'; 
 
-const Products = () => {
+const ProductBrowse = () => {
     return (
         <>
             <Navigationbar/>
@@ -11,4 +11,4 @@ const Products = () => {
         )
 }
 
-export default Products
+export default ProductBrowse

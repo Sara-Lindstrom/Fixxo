@@ -1,6 +1,6 @@
 import React from 'react'
-import ProductCard from '../components/ProductCard';
 import Footer from '../sections/Footer';
+import ProductGrid from '../sections/ProductGrid';
 import Navigationbar from './../sections/Navigationbar'; 
 import Showcase from './../sections/Showcase';
 
@@ -9,7 +9,7 @@ const Home = () => {
     <>
         <Navigationbar />
         <Showcase />
-        <ProductCard/>
+        <ProductGrid title={"Featured Products"} col={"4"}/>
         <Footer/>
     </>
   )
