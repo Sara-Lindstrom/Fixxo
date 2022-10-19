@@ -4,6 +4,8 @@ import Footer from '../sections/Footer';
 import ProductGrid from '../sections/ProductGrid';
 import Navigationbar from './../sections/Navigationbar'; 
 import Showcase from './../sections/Showcase';
+import FeaturedShowcase from './../sections/FeaturedShowcase';
+import ShoppingInfo from '../sections/ShoppingInfo';
 
 const Home = () => {
 
@@ -23,6 +25,8 @@ const Home = () => {
         <Navigationbar />
         <Showcase />
         <ProductGrid title={"Featured Products"} products={featuredProducts} col={"4"}/>
+        <FeaturedShowcase/>
+        <ShoppingInfo/>
         <Footer/>
     </>
   )

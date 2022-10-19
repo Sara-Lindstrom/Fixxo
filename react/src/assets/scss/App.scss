@@ -7,5 +7,9 @@
 @import "./components/buttons";
 @import "./components/productCard";
 @import "./components/navigationbar";
-@import "./components/showcase.scss";
 @import "./components/footer.scss";
+
+// HOMEVIEW
+@import "./homeview/showcase.scss";
+@import "./homeview/featuredShowcase";
+@import "./homeview/shoppingInfo";

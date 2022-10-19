@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard'
 const ProductGrid = ({title, products, col}) => {
 
   return (
-    <div className='contianer'>
+    <div className='container'>
         <h4 className="headline">{title}</h4>
             <div className={`d-grid-${col}`}>
 
