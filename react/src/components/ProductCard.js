@@ -1,12 +1,25 @@
 import React from 'react'
-import RoundButtonImg from './RoundButtonImg'
-import searchIcon from '../assets/img/search-icon.svg';
-import shareIcon from '../assets/img/share-icon.svg';
+import RoundButtonImg from './RoundButtonImg';
+import cartIcon from '../assets/img/cart-icon.svg';
+import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import cardBackgroundImg from '../assets/img/card-img.svg';
 import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({item}) => {
+
+    const addToWhishlist = (e) => {
+        (console.log(`added to whish list`))
+    }
+
+    const addToCompare = (e) => {
+        (console.log("added to compare"))
+    }
+
+    const addTocart = (e) => {
+        (console.log("added to cart"))
+    }
+
   return (
     <div className="card">
         <div className="card-background">
@@ -16,12 +29,12 @@ const ProductCard = ({item}) => {
             {/* <!-- options and availability --> */}
             <div className="card-options">
                 <ul>
-                    <li><RoundButtonImg image={wishlistIcon}></RoundButtonImg></li>
-                    <li><RoundButtonImg image={searchIcon}></RoundButtonImg></li>
-                    <li><RoundButtonImg image={shareIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg onClickEvent={addToWhishlist} image={wishlistIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg onClickEvent={addToCompare} image={compareIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg onClickEvent={addTocart} image={cartIcon}></RoundButtonImg></li>
                 </ul>
 
-                <button className="button theme-button"><NavLink className="theme-button-link" to="/product/id">QUICK&nbsp;VIEW</NavLink></button>
+                <button className="button theme-button"><NavLink className="theme-button-link" to={`/product/id/${item.id}`}>QUICK&nbsp;VIEW</NavLink></button>
             </div>
         </div>
 

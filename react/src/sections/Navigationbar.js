@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import fixxoLogo from '../assets/img/Fixxo.svg';
 import searchIcon from '../assets/img/search-icon.svg';
-import shareIcon from '../assets/img/share-icon.svg';
+import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import cartIcon from '../assets/img/cart-icon.svg';
 import RoundButtonImg from '../components/RoundButtonImg';
@@ -26,7 +26,7 @@ const Navigationbar = () => {
           <nav className="navigation-menu">
               <NavLink className="navigation-menu-item" to="/" end>Home</NavLink>
               <NavLink className="navigation-menu-item" to="/categories" end>Categories</NavLink>
-              <NavLink className="navigation-menu-item" to="/products" end>Products</NavLink>
+              <NavLink className="navigation-menu-item" to="/products">Products</NavLink>
               <NavLink className="navigation-menu-item" to="/contacts" end>Contacts</NavLink>           
           </nav>             
         </div>
@@ -41,7 +41,7 @@ const Navigationbar = () => {
 
             {/* account menu */}
             
-            <RoundButtonImg link="/share" image={shareIcon}></RoundButtonImg> 
+            <RoundButtonImg link="/share" image={compareIcon}></RoundButtonImg> 
             <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={3}></RoundButtonImg>
             <RoundButtonImg link="/shoppingcart" image={cartIcon} notificationNumber={12}></RoundButtonImg>
 

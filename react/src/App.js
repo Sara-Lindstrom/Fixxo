@@ -18,10 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/contacts" element={<Contacts/>}/>
-        <Route path="/product/id" element={<ProductSpec/>}/>
+        <Route path="/product/id/:id" element={<ProductSpec/>}/>
         
         <Route path="/categories" element={<Categories/>}/>
-        <Route path="/product/browse" element={<Products/>}/>
+        <Route path="/products" element={<Products/>}/>
         <Route path="/search" element={<Search/>}/>
         <Route path="/share" element={<Share/>}/>
         <Route path="/shoppingcart" element={<ShoppingCart/>}/>

@@ -10,8 +10,10 @@
 .theme-button {
     background-color: $color-theme;
     color: white;
+    transition: color 300ms;
 
     &:hover{
+        color:$color-dark;
 
         &::before {
             border-left:2px solid $color-dark;
@@ -59,23 +61,13 @@
     }
 }
 
-.b-dark {
+.dark-button {
     background-color: $color-dark;
     color: white;
-    transition: color 300ms;
+    transition: background-color 300ms;
 
     &:hover{
-        color: $color-theme;
-
-        &::before {
-            border-left:2px solid $color-theme;
-            border-top:2px solid $color-theme;
-        }
-        
-        &::after{
-            border-right:2px solid $color-theme;
-            border-bottom:2px solid $color-theme;
-        }
+        background-color: $color-theme;
     }
 
     // decoration
@@ -94,14 +86,12 @@
         top:0.4rem;
         border-left:2px solid white;
         border-top:2px solid white;
-        transition: border 300ms;
     }
     &::after{
         right:0.4rem;
         bottom:0.4rem;
         border-right:2px solid white;
         border-bottom:2px solid white;
-        transition: border 300ms;
     }
 }
 

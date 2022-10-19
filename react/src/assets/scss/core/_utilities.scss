@@ -41,6 +41,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap:1rem;
+    padding: 1rem;
 
     @include lg {  
         grid-template-columns: repeat(4, 1fr);
@@ -51,6 +52,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    gap:1rem;
+    padding: 1rem;
 }
 
 // LINKS
