@@ -32,8 +32,17 @@
     max-width: 100vw;
 }
 
+.d-none {
+    display: none;
+}
+
 .flex {
-    display: flex;
+    display:block;
+
+    @include lg {
+      display: flex;        
+    }
+
 }
 
 .d-grid-4 {
@@ -94,5 +103,10 @@ ul {
     font-weight: $font-weight-bold;
 
     @include lg {}
+}
+
+// LINBREAK
+.line-break {
+    margin-top: 2rem;
 }
  

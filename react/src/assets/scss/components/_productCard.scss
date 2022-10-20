@@ -8,7 +8,7 @@
     &:hover {
         .card-background{
             .card-options {
-            left:0;
+                left:0;
             }
         }
     }
@@ -141,4 +141,16 @@
             }
         }
     }
-}  
+} 
+
+// Card info to side
+.card-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    gap:1rem;
+    margin: 2rem auto;
+    align-items: center;
+    text-align: left;
+    padding: 0 2rem;
+}

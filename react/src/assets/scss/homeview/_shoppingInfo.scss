@@ -7,10 +7,11 @@
         padding: 1rem;
     }
 
-    .flex {
+    .flexed-box {
         gap: 0.5rem;
         justify-content: center;
         align-items: stretch;
+        display: flex;
 
         @include lg {
             gap:1rem;

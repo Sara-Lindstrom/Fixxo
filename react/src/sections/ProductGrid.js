@@ -1,17 +1,16 @@
 import React from 'react'
 import ProductCard from '../components/ProductCard'
 
-const ProductGrid = ({title, products, col}) => {
+const ProductGrid = ({title, products, col, cardIsFlexed}) => {
 
   return (
-    <div className='container'>
+    <div className="container">
         <h4 className="headline">{title}</h4>
-            <div className={`d-grid-${col}`}>
+        <div className={`d-grid-${col}`}>
 
-                {products.map(product => <ProductCard key={product.id} item={product}/>)}
+            {products.map(product => <ProductCard cardIsFlexed={cardIsFlexed} key={product.id} item={product}/>)}
 
-            </div>
-
+        </div>
     </div>
   )
 }

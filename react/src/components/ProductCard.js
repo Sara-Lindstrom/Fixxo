@@ -6,7 +6,7 @@ import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import cardBackgroundImg from '../assets/img/card-img.svg';
 import { NavLink } from 'react-router-dom';
 
-const ProductCard = ({item}) => {
+const ProductCard = ({item, cardIsFlexed}) => {
 
     const addToWhishlist = (e) => {
         (console.log(`added to whish list`))
@@ -21,7 +21,7 @@ const ProductCard = ({item}) => {
     }
 
   return (
-    <div className="card">
+    <div className={cardIsFlexed ? "card card-side" : "card"}>
         <div className="card-background">
             <img src={cardBackgroundImg} alt={item.productName}/> 
             
