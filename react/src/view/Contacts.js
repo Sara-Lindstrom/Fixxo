@@ -5,8 +5,8 @@ import Navigationbar from './../sections/Navigationbar';
 const Contacts = () => {
   return (
     <>
-        <Navigationbar/>
-        <Footer/>
+      <Navigationbar/>
+      <Footer/>
     </>
   )
 }

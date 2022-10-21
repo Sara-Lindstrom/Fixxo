@@ -74,7 +74,7 @@ const Home = () => {
           <CompanyInformation companyimg={CustomerDelivery} companytitle={"Free Home Delivery"} companyinfo={"Lorem ipsum dolor sit amet consectetur."}/>
           <CompanyInformation companyimg={CustomerDelivery} companytitle={"30 Day Free Return"} companyinfo={"Lorem ipsum dolor sit amet consectetur."}/>
       </div>   
-      <Footer shortSite= {false}/>
+      <Footer shortSite={false}/>
     </>
   )
 }
