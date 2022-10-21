@@ -1,7 +1,6 @@
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px red solid;
 
     @include md {
         display: flex;
@@ -9,8 +8,9 @@
 
     .group-info{
         text-align: center;
-        width: 100%;
-        border: 1px red solid;
+        padding: 0.5rem;
+        height: 100%;
+
 
         button {
             padding: 0.5rem;

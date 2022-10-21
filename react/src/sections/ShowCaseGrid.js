@@ -8,7 +8,7 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
   const rightShow = rightImg !== "" ? true : false;
 
   return (
-    <div className="container flex showcasegrid-container">
+    <div className="container-fluid showcasegrid-container">
       <div className={leftShow ? "group" : "d-none"}>
         <img src={leftImg} alt={leftAlt}/>
 
@@ -19,7 +19,7 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
       </div>
 
 
-        <ProductGrid title={""} products={products} col={col}/>
+      <ProductGrid title={""} products={products} col={col}/>
 
       <div className={rightShow ? "group" : "d-none"}>
         <img src={rightImg} alt={rightAlt}/>

@@ -1,10 +1,16 @@
 // BUTTONS
 .button {
-    padding:0.8rem 3rem;
-    border:none;
-    font-family: $font-poppins;
-    font-size: $font-size-16;
-    font-weight: $font-weight-semibold;
+    padding: 0.3 2rem;
+    border:none;    
+    font-family: $font-poppins; 
+    font-size: $font-size-13;  
+    font-weight: $font-weight-semibold;     
+
+    @include lg {
+        padding:0.8rem 3rem;
+        font-size: $font-size-16; 
+    }
+
 }
 
 .theme-button {
