@@ -1,4 +1,5 @@
 import React from 'react';
+// import { ReactDOM } from 'react';
 import { useState } from 'react';
 import fixxoLogo from '../assets/img/Fixxo.svg';
 import searchIcon from '../assets/img/search-icon.svg';
@@ -16,7 +17,8 @@ const Navigationbar = () => {
     setShowMenu(!showMenu)
   }
 
-  return (
+  // ReactDOM.createPortal(<div></div>, document.getElementById()) (
+    return(
     <header className="container header">
       {/* LOGO */}
         <NavLink className="logo" to="/"><img src={fixxoLogo} alt="Fixxo."/></NavLink>

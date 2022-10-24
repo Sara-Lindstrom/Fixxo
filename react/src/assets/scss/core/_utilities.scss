@@ -94,6 +94,10 @@ ul {
     max-width: fit-content;
 }
 
+.active {
+    color: $color-theme;
+}
+
 // QUICK HELP
 .hidden-text{
     display:none;

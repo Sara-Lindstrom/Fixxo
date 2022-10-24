@@ -1,6 +1,6 @@
 import React from 'react'
-import leftImg from '../assets/img/pamela-reif-top-pick.svg';
-import rightImg from '../assets/img/lets-be-conscios.svg'
+import leftImg from '../../assets/img/pamela-reif-top-pick.svg';
+import rightImg from '../../assets/img/lets-be-conscios.svg'
 
 const FeaturedShowcase = () => {
   return (

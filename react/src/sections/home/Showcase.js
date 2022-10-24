@@ -1,8 +1,8 @@
 import React from 'react'
-import showcaseLeft from '../assets/img/showcase-left.svg'
-import showcaseRight from '../assets/img/showcase-right.svg'
-import underLefttImg from '../assets/img/winter-clearans-placeholder.svg'
-import underRightImg from '../assets/img/new-arrivals-placeholder.svg'
+import showcaseLeft from '../../assets/img/showcase-left.svg'
+import showcaseRight from '../../assets/img/showcase-right.svg'
+import underLefttImg from '../../assets/img/winter-clearans-placeholder.svg'
+import underRightImg from '../../assets/img/new-arrivals-placeholder.svg'
 
 const Showcase = () => {
   return (

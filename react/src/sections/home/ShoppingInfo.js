@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import placeholderImg from './../assets/img/speciality-pic.svg'
+import placeholderImg from '../../assets/img/speciality-pic.svg'
 
 const ShoppingInfo = () => {
   return (

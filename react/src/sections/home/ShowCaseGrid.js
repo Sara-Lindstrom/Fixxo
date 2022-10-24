@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductGrid from '../sections/ProductGrid';
+import ProductGrid from '../../sections/home/ProductGrid';
 
 const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => {
 

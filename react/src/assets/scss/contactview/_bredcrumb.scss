@@ -1,0 +1,30 @@
+.breadcrumb {
+    margin-top: 5rem;
+    max-height: fit-content;
+
+    @include lg {
+        width: 70vw;
+    }
+
+    .breadcrumb-list { 
+        color: $color-theme;
+
+        li {
+            display: inline-block;
+
+            a{   
+                color: $color-dark;
+            }
+
+            &:hover {
+                color:$color-theme;
+            }
+
+            & + li:before{
+                content: ">";
+                margin: 0 1rem;
+                color: $color-dark;
+            }
+        }
+    }
+}

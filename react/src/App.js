@@ -15,6 +15,7 @@ import Whishlist from './view/inaktive/Whishlist';
 function App() {
   return (
     <BrowserRouter>
+    
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/contacts" element={<Contacts/>}/>
