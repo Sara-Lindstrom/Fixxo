@@ -10,7 +10,7 @@ const Contacts = () => {
     <>
       <Navigationbar/>
       <BreadCrumb currentPage="Contacts"/>
-      {/* <Map/> */}
+      <Map/>
       <ContactForm/>
       <Footer shortSite={true}/>
     </>

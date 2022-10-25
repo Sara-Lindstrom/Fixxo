@@ -2,9 +2,13 @@
     border-top: 1px $color-gray-40 solid;
     justify-self: baseline;
     background-color: $color-gray-20;
-    padding: 1rem;
     text-align: center;
     font-family: $font-poppins;
+    padding: 0.5rem;
+
+    @include lg {
+        padding: 1rem;
+    }
 
     .social-media-links {
         margin: 0.8rem;
@@ -21,10 +25,14 @@
     p {
         font-size: $font-size-13;
         color: $color-gray-60;
+        margin: 0;
     }
 }
 .fixed-footer{
-    position: fixed;
     width: 100%;
     bottom:0;
+
+    @include md {   
+        position: fixed;
+    }
 }
