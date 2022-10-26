@@ -1,3 +1,4 @@
+// title
 .come-in-contact-title {
     font-size: $font-size-20;
     margin: 0 1rem;
@@ -9,8 +10,9 @@
     }
 }
 
+// error message and commited comment
 .error {
-    border: 1px solid $color-theme;
+    outline: 1px solid $color-theme;
 }
 
 .error-message {
@@ -27,6 +29,7 @@
     }
 }
 
+// form
 .contact-form {
     display: grid;
     grid-template-columns: 1fr;
@@ -43,6 +46,7 @@
         margin: 1rem auto;
     }
 
+    // input general, name and email
     input {
         width: 100%;
         padding: 0.3rem 0.5rem;
@@ -63,6 +67,7 @@
         }
     }
 
+    // textarea general and comment
     textarea {
         width: 100%;
         height: 5rem;
@@ -78,6 +83,7 @@
         }
     }
 
+    // submit button
     button {
         width: 100%;
         height: 2.5rem;

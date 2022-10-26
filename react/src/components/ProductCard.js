@@ -21,12 +21,13 @@ const ProductCard = ({item, cardIsFlexed}) => {
     }
 
   return (
+    // card core
     <div className={cardIsFlexed ? "card card-side" : "card"}>
         <div className="card-background">
             <img src={cardBackgroundImg} alt={item.productName}/> 
             
                             
-            {/* <!-- options and availability --> */}
+            {/* options and availability */}
             <div className="card-options">
                 <ul>
                     <li><RoundButtonImg onClickEvent={addToWhishlist} image={wishlistIcon}></RoundButtonImg></li>
@@ -38,6 +39,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
             </div>
         </div>
 
+        {/* product information */}
         <div className="product-info">
             <p className="category">{item.category}</p>
             <h4 className="product-name">{item.productName}</h4>

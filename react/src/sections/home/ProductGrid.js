@@ -8,7 +8,7 @@ const ProductGrid = ({title, products, col, cardIsFlexed}) => {
         <h4 className="headline">{title}</h4>
         <div className={`d-grid-${col}`}>
 
-            {products.map(product => <ProductCard cardIsFlexed={cardIsFlexed} key={product.id} item={product}/>)}
+          {products.map(product => <ProductCard cardIsFlexed={cardIsFlexed} key={product.id} item={product}/>)}
 
         </div>
     </div>

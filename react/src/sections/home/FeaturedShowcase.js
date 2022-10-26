@@ -4,7 +4,7 @@ import rightImg from '../../assets/img/lets-be-conscios.svg'
 
 const FeaturedShowcase = () => {
   return (
-    // <!-- Pamela reif and lets be conscious -->
+    // Pamela reif 
     <div className="container-fluid pamela-reif-lets-be-conscious">
         <div className="pamela-reif">
             <img src={leftImg} alt="pamela reif's top picks"/>
@@ -14,6 +14,7 @@ const FeaturedShowcase = () => {
                 <button className="button dark-button">SHOP NOW</button>
             </div>
         </div>
+        {/* and lets be conscious */}
         <div className="lets-be-conscious">
             <img src={rightImg} alt="Let's be conscious"/>
 

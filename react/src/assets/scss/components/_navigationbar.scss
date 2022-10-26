@@ -18,11 +18,13 @@
         align-items: center;
     }
 
+    // LOGO
     .logo {
         grid-column: 1;
         grid-row: 1;
     }
 
+    // Navigation menu and drop down on small devices
     .dropdown-navigation-menu{
         position: absolute;
         top:100%;

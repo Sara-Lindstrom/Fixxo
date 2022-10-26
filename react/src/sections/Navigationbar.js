@@ -42,7 +42,6 @@ const Navigationbar = () => {
             </div>
 
             {/* account menu */}
-            
             <RoundButtonImg link="/share" image={compareIcon}></RoundButtonImg> 
             <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={3}></RoundButtonImg>
             <RoundButtonImg link="/shoppingcart" image={cartIcon} notificationNumber={12}></RoundButtonImg>

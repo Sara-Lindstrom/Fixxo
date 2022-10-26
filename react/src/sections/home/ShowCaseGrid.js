@@ -9,6 +9,8 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
 
   return (
     <div className="container-fluid showcasegrid-container">
+
+      {/* if left image is active */}
       <div className={leftShow ? "group" : "d-none"}>
         <img src={leftImg} alt={leftAlt}/>
 
@@ -18,9 +20,10 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
         </div>        
       </div>
 
-
+      {/* card grid */}
       <ProductGrid title={""} products={products} col={col}/>
 
+      {/* if right image is active */}
       <div className={rightShow ? "group" : "d-none"}>
         <img src={rightImg} alt={rightAlt}/>
         <div className="info">
