@@ -3,7 +3,6 @@ import RoundButtonImg from './RoundButtonImg';
 import cartIcon from '../assets/img/cart-icon.svg';
 import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
-import cardBackgroundImg from '../assets/img/card-img.svg';
 import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({item, cardIsFlexed}) => {
@@ -24,7 +23,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
     // card core
     <div className={cardIsFlexed ? "card card-side" : "card"}>
         <div className="card-background">
-            <img src={cardBackgroundImg} alt={item.productName}/> 
+            <img src={item.image} alt={item.productName}/> 
             
                             
             {/* options and availability */}

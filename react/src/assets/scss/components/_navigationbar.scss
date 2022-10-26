@@ -22,6 +22,7 @@
     .logo {
         grid-column: 1;
         grid-row: 1;
+        width: 100%;
     }
 
     // Navigation menu and drop down on small devices
@@ -33,6 +34,7 @@
         backdrop-filter: blur(8px);
         background-color: rgba(255, 255, 255, 0.185);
         display: none;
+        width: 100%;
 
         @include lg {
             display:inline;
@@ -50,6 +52,7 @@
             padding:0;
             margin-top: auto;
             margin-bottom: 0.3rem;
+            width: 100%;
     
             @include lg {
                 flex-direction: row;
@@ -61,7 +64,7 @@
                 
     
                 &:last-child{
-                margin-right: 1rem;
+                margin-right: 0rem;
                 }
     
                 @include md {
@@ -80,12 +83,12 @@
         grid-column: 2;
         grid-area: 1;
         display: flex;
-        justify-items: space-between;
+        justify-content:right;
         align-items: center;
-        justify-self: end;
         margin-top: auto;
         margin-bottom: auto;
         height: fit-content;
+        width: 100%;
 
         .search {
             i {

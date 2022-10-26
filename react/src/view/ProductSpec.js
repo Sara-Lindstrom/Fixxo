@@ -1,20 +1,21 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
 import Footer from '../sections/Footer';
 import Navigationbar from './../sections/Navigationbar'; 
+import BreadCrumb from '../sections/contact/BreadCrumb';
+import ProductImgGrid from '../sections/productspecification/ProductImgGrid';
 
 const ProductSpec = () => {
 
-  const params = useParams()
-
   return (
-    <>
+    <div className='container'>
       <Navigationbar/>
-        <div className="container mt-5">
-          <h1>{params.id}</h1>
-        </div>
-      <Footer/>
-    </>
+      <p className="commersial-info"> Get 25% OFF at the Fixxo Selection - Shop Now!</p>
+      <BreadCrumb currentPage="Product Details"/>
+      <div>
+        <ProductImgGrid/>
+      </div>
+      <Footer shortSite={true}/> 
+    </div>
   )
 }
 
