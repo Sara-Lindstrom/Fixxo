@@ -6,7 +6,7 @@ const ProductBrowse = () => {
     return (
         <>
             <Navigationbar/>
-            <Footer/>
+            <Footer shortSite={true}/>
         </>
         )
 }

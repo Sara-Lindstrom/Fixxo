@@ -7,15 +7,14 @@ import ProductImgGrid from '../sections/productspecification/ProductImgGrid';
 const ProductSpec = () => {
 
   return (
-    <div className='container'>
+    <>
       <Navigationbar/>
-      <p className="commersial-info"> Get 25% OFF at the Fixxo Selection - Shop Now!</p>
-      <BreadCrumb currentPage="Product Details"/>
-      <div>
+      <BreadCrumb currentPage="Product Details" comersial="Get 25% OFF at the Fixxo Selection - Shop Now!"/>
+      <div className="container">
         <ProductImgGrid/>
       </div>
-      <Footer shortSite={true}/> 
-    </div>
+      <Footer shortSite={true}/>
+    </> 
   )
 }
 

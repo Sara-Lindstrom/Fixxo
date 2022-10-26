@@ -1,9 +1,18 @@
 .breadcrumb {
-    margin-top: 5rem;
     max-height: fit-content;
 
     @include lg {
         width: 70vw;
+        margin-top: 5rem;
+    }
+
+    .commersial-info {
+        display: flex;
+        justify-content: center;
+        margin-top:6rem;
+        font-size: $font-size-13;
+        color: $color-theme;
+        margin-bottom: 1rem;
     }
 
     .breadcrumb-list { 
