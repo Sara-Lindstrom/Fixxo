@@ -21,12 +21,13 @@
 }
 
 .submitted-comment {
-    display: flex;
-    justify-content: center;
+    max-width: 70vw;
+    margin:1rem auto 2rem auto;
+}
 
-    h2 { 
-        font-size: $font-size-20;
-    }
+.submitted-comment-fail {
+    max-width: 70vw;
+    margin:1rem auto 2rem auto;
 }
 
 // form

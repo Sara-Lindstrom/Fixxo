@@ -7,13 +7,15 @@ import ContactForm from '../sections/contact/ContactForm';
 
 const Contacts = () => {
   return (
-    <>
-      <Navigationbar/>
-      <BreadCrumb currentPage="Contacts"/>
-      <Map/>
-      <ContactForm/>
-      <Footer shortSite={true}/>
-    </>
+    <div className='footer-wrapper'>
+      <div className='wrapper'>
+        <Navigationbar/>
+        <BreadCrumb currentPage="Contacts"/>
+        <Map/>
+        <ContactForm/>
+      </div>
+      <Footer/>
+    </div>
   )
 }
 

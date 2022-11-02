@@ -16,7 +16,7 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
 
         <div className="info">
           <h4>2 FOR USD $29</h4>
-          <button class="button light-button"> FLASH&nbsp;SALE</button>
+          <button className="button light-button"> FLASH&nbsp;SALE</button>
         </div>        
       </div>
 

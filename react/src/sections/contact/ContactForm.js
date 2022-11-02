@@ -1,5 +1,7 @@
+import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 import { useState } from 'react'
+import {submitData} from '../../assets/script/SubmitData'
 
 const ContactForm = () => {
     // useStates for validation
@@ -9,6 +11,8 @@ const ContactForm = () => {
     const [nameError, setNameError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [commentError, setCommentError] = useState('');
+
+    const [failedSubmit, setFailedSubmit] = useState (false);
     
     // validate name and set errors
     const ValidateName = () => {
@@ -69,23 +73,39 @@ const ContactForm = () => {
     }  
     
     // validate if input is error free
-    const ValidateOnSubmit = () => {
+    const ValidateOnSubmit = async (e) => {
         let validName = ValidateName();
         let validEmail = ValidateEmail();
         let validComment =  ValidateComment();
 
-        if(validName === true && validEmail === true && validComment === true)
-            return true;
+        setFailedSubmit (false)
+        
+        e.preventDefault()
+
+        if(validName === true && validEmail === true && validComment === true){
+
+            let json = JSON.stringify({"name":contactForm.name, "email":contactForm.email, "comments":contactForm.comment})
+
+            setContactForm ({name: '', email: '', comment: ''})
+            setNameError ('')
+            setEmailError ('')
+            setCommentError ('')
+
+            if (await submitData ('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', json,)) {
+                setCanSubmit (true)
+                setFailedSubmit (false)
+            }
+            else {
+                setCanSubmit (false)
+                setFailedSubmit (true)
+            }
+
+        }
+
         else{
-            return false;
+            setCanSubmit (false)
         }
     };
-    
-    // validates if submit is valid
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setCanSubmit(ValidateOnSubmit());
-    }
 
 
   return (
@@ -94,34 +114,43 @@ const ContactForm = () => {
             // if for message when correct submittion
             canSubmit?
             (
-                <div className="submitted-comment"><h2>Thank You For Your Comment!</h2></div>
-            )
-            :
-            (
-                // form
-                <>
-                    <h2 className="come-in-contact-title">Come In Contact With Us</h2>
-                    <form onSubmit={handleSubmit} noValidate className="contact-form">
-                        <div className='name'>
-                            <input className={`${nameError === "" ? "" : "error"}`} id="name" type="text" placeholder='Your Name' value={contactForm.name} onKeyUp={ValidateName} onChange={handleChange}/>
-                            <div className="error-message">{nameError}</div>
-                        </div>
-                        <div className='email'>
-                            <input className={`${emailError === "" ? "" : "error"}`} id="email" type="email" placeholder='Your Mail' value={contactForm.email} onKeyUp={ValidateEmail} onChange={handleChange}/>
-                            <div className="error-message">{emailError}</div>
-                        </div>
-                        <div className="comment">
-                            <textarea className={`${commentError === "" ? "" : "error"}`} id="comment" placeholder='comment' value={contactForm.comment} onKeyUp={ValidateComment} onChange={handleChange}></textarea>
-                            <div className="error-message">{commentError}</div>
-                        </div>
-                        <div className='submit'>
-                            <button type="submit" className="button theme-button">Post Comment</button>
-                        </div>
-                    </form>
-                </>
-            )
+                <div className="alert alert-success text-center submitted-comment" role="alert">
+                    <h2>Thank You For Your Comment!</h2>
+                    <p>We Will Contact You As Soon As Possible.</p>
+                </div>
+            ) : (<></>) 
         }
 
+        {
+            failedSubmit?
+            (
+                <div className="alert alert-danger text-center submitted-comment-fail" role="alert">
+                    <h2>Oops!</h2>
+                    <p>Something went Wrong. We couldn't receive your comment right now.</p>
+                </div>
+            ) : (<></>) 
+        }
+            
+            
+        {/* // form */}
+        <h2 className="come-in-contact-title">Come In Contact With Us</h2>
+        <form onSubmit={ValidateOnSubmit} noValidate className="contact-form">
+            <div className='name'>
+                <input className={`${nameError === "" ? "" : "error"}`} id="name" type="text" placeholder='Your Name' value={contactForm.name} onKeyUp={ValidateName} onChange={handleChange}/>
+                <div className="error-message">{nameError}</div>
+            </div>
+            <div className='email'>
+                <input className={`${emailError === "" ? "" : "error"}`} id="email" type="email" placeholder='Your Mail' value={contactForm.email} onKeyUp={ValidateEmail} onChange={handleChange}/>
+                <div className="error-message">{emailError}</div>
+            </div>
+            <div className="comment">
+                <textarea className={`${commentError === "" ? "" : "error"}`} id="comment" placeholder='comment' value={contactForm.comment} onKeyUp={ValidateComment} onChange={handleChange}></textarea>
+                <div className="error-message">{commentError}</div>
+            </div>
+            <div className='submit'>
+                <button type="submit" className="button theme-button">Post Comment</button>
+            </div>
+        </form>
     </section>
   )
 }

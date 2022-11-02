@@ -1,3 +1,14 @@
+.footer-wrapper{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    
+    .wrapper{
+        flex:1;
+    }  
+}
+
 .footer-background {
     border-top: 1px $color-gray-40 solid;
     justify-self: baseline;
@@ -27,14 +38,6 @@
         color: $color-gray-60;
         margin: 0;
     }
-}
+}  
 
-// small site footer
-.fixed-footer{
-    width: 100%;
-    bottom:0;
 
-    @include md {   
-        position: fixed;
-    }
-}
