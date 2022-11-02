@@ -23,7 +23,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
     // card core
     <div className={cardIsFlexed ? "card card-side" : "card"}>
         <div className="card-background">
-            <img src={item.image} alt={item.productName}/> 
+            <img src={item.imageName} alt={item.name}/> 
             
                             
             {/* options and availability */}
@@ -34,14 +34,14 @@ const ProductCard = ({item, cardIsFlexed}) => {
                     <li><RoundButtonImg onClickEvent={addTocart} image={cartIcon}></RoundButtonImg></li>
                 </ul>
 
-                <button className="button theme-button"><NavLink className="theme-button-link" to={`/product/id/${item.id}`}>QUICK&nbsp;VIEW</NavLink></button>
+                <button className="button theme-button"><NavLink className="theme-button-link" to={`/product/id/${item.articleNumber}`}>QUICK&nbsp;VIEW</NavLink></button>
             </div>
         </div>
 
         {/* product information */}
         <div className="product-info">
             <p className="category">{item.category}</p>
-            <h4 className="product-name">{item.productName}</h4>
+            <h4 className="product-name">{item.name}</h4>
             <div className="star-rating">
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
@@ -49,7 +49,6 @@ const ProductCard = ({item, cardIsFlexed}) => {
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-regular fa-star"></i>
             </div>
-            <p className="disscount-price">{item.salePrice}</p>
             <p className="original-price">{item.price}</p>
         </div> 
     </div>   

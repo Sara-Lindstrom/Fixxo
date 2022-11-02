@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumb from '../sections/contact/BreadCrumb';
+import BreadCrumb from '../sections/BreadCrumb';
 import Footer from '../sections/Footer';
 import Navigationbar from './../sections/Navigationbar'; 
 import Map from './../sections/contact/Map';

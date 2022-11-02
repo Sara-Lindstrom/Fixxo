@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../sections/Footer';
 import Navigationbar from './../sections/Navigationbar'; 
-import BreadCrumb from '../sections/contact/BreadCrumb';
+import BreadCrumb from '../sections/BreadCrumb';
 import ProductImgGrid from '../sections/productspecification/ProductImgGrid';
 
 const ProductSpec = () => {
