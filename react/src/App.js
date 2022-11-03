@@ -13,26 +13,28 @@ import Search from './view/inaktive/Search';
 import Share from './view/inaktive/Share';
 import ShoppingCart from './view/inaktive/ShoppingCart';
 import Whishlist from './view/inaktive/Whishlist';
-
 function App() {
 
   //  USESTATE PRODUCTS
-  const [products, setProducts] = useState([]) 
-  const [featuredProducts, setFeaturedProducts] = useState ([])
+  const [products, setProducts] = useState({
+    all: [],
+    featured: [],
+  }) 
 
   useEffect (() => {
     const fetchAllData = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts(await result.json())
+      setProducts({...products, all: await result.json()})
     }
     fetchAllData()
 
     const fetchFeaturedData = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-      setFeaturedProducts(await result.json())
+      setProducts({...products, featured: await result.json()})
     }
     fetchFeaturedData()
-  }, [setProducts, setFeaturedProducts])
+     
+  }, [])
 
   return (
     <BrowserRouter>

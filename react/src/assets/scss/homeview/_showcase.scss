@@ -10,7 +10,7 @@
     justify-content: space-between;
     }
 
-    img {
+    .showcase-img {
         display:none;
 
         @include md {
@@ -67,17 +67,19 @@
             margin: 3rem 0;
         }
 
-        img {
+        .clearence-arrival-img {
             max-height: 30vh;
-            max-width: 100%;
+            min-width: 100%;
+            object-fit: contain;
 
             @include md {
-                max-height: 20vh;
+                width: 100%;
+                object-fit: contain;
             }
 
             @include lg {
                 max-height: 100%;
-                max-width: 100%;
+                min-width: 100%;
                 object-fit: contain;
 
             }
@@ -94,6 +96,10 @@
                 font-weight: $font-weight-bold;
 
                 @include lg {
+                    font-size: $font-size-20;
+                }
+
+                @include xl {
                     font-size: $font-size-45;
                 }
             }

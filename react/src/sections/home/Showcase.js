@@ -8,13 +8,13 @@ const Showcase = () => {
   return (
     <>
       <div className="showcase">
-          <img src={showcaseLeft} alt="showcase"/>
+          <img className='showcase-img' src={showcaseLeft} alt="showcase"/>
           <div className="group"> 
               <h2>SALE UP<br/>To 50% off</h2>
               <p>online shopping free home delivery over $100</p>
               <button className="button theme-button">SHOP&nbsp;NOW</button>
           </div>
-          <img src={showcaseRight} alt="showcase"/>
+          <img className='showcase-img' src={showcaseRight} alt="showcase"/>
       </div>
 
     {/* winter clearance and new arrivals */}
@@ -26,7 +26,7 @@ const Showcase = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia quod necessitatibus maiores aspernatur aperiam optio repellendus, quas nesciunt illo repellat sunt aliquam autem, consectetur minus quos nobis velit. Exercitationem.</p>
                 <button className="button dark-button">SHOP&nbsp;NOW</button>       
             </div>
-            <img src={underLefttImg} alt="winter clearance"/>
+            <img className='clearence-arrival-img' src={underLefttImg} alt="winter clearance"/>
         </div>
         {/* <!-- new arrivals --> */}
         <div className="arrivals background">  
@@ -34,7 +34,7 @@ const Showcase = () => {
                 <h2>New<br/>Arivals</h2>
                 <button className="button dark-button">SHOP&nbsp;NOW</button>                         
             </div>  
-            <img src={underRightImg} alt="new arrivals"/>
+            <img className='clearence-arrival-img' src={underRightImg} alt="new arrivals"/>
         </div>
     </div>
     </>
