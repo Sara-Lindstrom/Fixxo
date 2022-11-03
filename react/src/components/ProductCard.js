@@ -4,6 +4,7 @@ import cartIcon from '../assets/img/cart-icon.svg';
 import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import { NavLink } from 'react-router-dom';
+import {ProductSpec} from '../view/ProductSpec';
 
 const ProductCard = ({item, cardIsFlexed}) => {
 
@@ -34,7 +35,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
                     <li><RoundButtonImg onClickEvent={addTocart} image={cartIcon}></RoundButtonImg></li>
                 </ul>
 
-                <button className="button theme-button"><NavLink className="theme-button-link" to={`/product/id/${item.articleNumber}`}>QUICK&nbsp;VIEW</NavLink></button>
+                <button className="button theme-button" onClick={ProductSpec}><NavLink className="theme-button-link" to={`/product/id/${item.articleNumber}`}>QUICK&nbsp;VIEW</NavLink></button>
             </div>
         </div>
 

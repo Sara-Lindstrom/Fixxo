@@ -1,4 +1,7 @@
 import React from 'react'
+import { useContext } from 'react';
+import { useState } from 'react';
+import { useEffect} from 'react';
 import Footer from '../sections/Footer';
 import ProductGrid from '../sections/home/ProductGrid';
 import Navigationbar from './../sections/Navigationbar'; 
@@ -13,17 +16,55 @@ import CustomerService from "./../assets/img/customer-service-icon.svg";
 import CustomerSecurePayment from "./../assets/img/secured-payment-icon.svg";
 import CustomerDelivery from "./../assets/img/delivery-truck-icon.svg";
 
+
 const Home = () => {
+
+  const [featuredProducts, setFeaturedProducts] = useState ([]);
+  const [showcaseProducts, setshowcaseProducts] = useState ([]);
+
+  useEffect (() => {
+      
+    const fetchFeaturedProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8');
+      setFeaturedProducts(await result.json())
+    }
+
+    fetchFeaturedProducts()
+  }, [])
+
+  // useEffect (() => {
+      
+  //   const fetchShowcaseProducts = async () => {
+  //     let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+  //     // setshowcaseProducts({...showcaseProducts, featuredProducts: await result.json()})
+  //     setshowcaseProducts(await result.json())
+  //   }
+
+  //   fetchShowcaseProducts()
+
+  // }, [])
+
+
+  
+
+  // const fetchShowcaseData = async () => {
+  //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+  //   let json = await result.json()
+  //   setProducts({...products, showcaseProducts: json})
+  //   console.log('showcase')
+  // }
+
+  // const productContext = useContext(ProductContext)
 
   return (
     <>
       <Navigationbar />
       
       <Showcase />
-      <ProductGrid title={"Featured Products"} col={"4"}/>
+      <ProductGrid title={"Featured Products"} col={"4"} items={featuredProducts}/>
       <FeaturedShowcase/>
       <ShoppingInfo/>
-      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} />
+      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} items={showcaseProducts} />
       <ShowCaseGrid leftImg={""} leftAlt={""}  col={2} rightImg={ShowCaseGridPlaceholder} rightAlt={"place holder"} />
       <SaleShowcase/>
       <div className="container flex">

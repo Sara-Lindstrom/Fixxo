@@ -16,31 +16,66 @@ import Whishlist from './view/inaktive/Whishlist';
 
 function App() {
 
-  //  USESTATE PRODUCTS
-  const [products, setProducts] = useState([]) 
-  const [featuredProducts, setFeaturedProducts] = useState ([])
+  // //  USESTATE PRODUCTS
+  // const [products, setProducts] = useState({
+  //   all: [],
+  //   featuredProducts: [],
+  //   showcaseProducts: [],
+  //   productSpec: []
+  // }) 
 
-  useEffect (() => {
-    const fetchAllData = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts(await result.json())
-    }
-    fetchAllData()
 
-    const fetchFeaturedData = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-      setFeaturedProducts(await result.json())
-    }
-    fetchFeaturedData()
-  }, [setProducts, setFeaturedProducts])
+  
+  // useEffect (() => {
+  //   fetchAllData();
+  //   fetchFeaturedData();
+  //   fetchShowcaseData();
+  // }, [])
+
+  // // useEffect (() => {
+  // //   fetchProductSpec ()
+  // // })
+
+  // const fetchAllData = async () => {
+  //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+  //   setProducts({...products, all: await result.json()})
+  //   console.log('fetchalldata')
+
+  //   return await result;
+  // }
+  
+  // const fetchFeaturedData = async () => {
+  //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+  //   // setProducts({...products, featuredProducts: await result.json()})
+  //   console.log('featured')
+
+  //   return await result.json();
+  // }
+
+  // const fetchShowcaseData = async () => {
+  //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+  //   let json = await result.json()
+  //   setProducts({...products, showcaseProducts: json})
+  //   console.log('showcase')
+  // }
+
+  
+  // const fetchProductSpec = async (id) => {
+  //   const {artnr} = id
+  //   let result = await fetch(`https://win22-webapi.azurewebsites.net/api/products/${artnr}`)
+  //   setProducts({...products, featuredProducts: await result.json()})
+  //   console.log(result.json())
+  // }
+
+
 
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={products}>
+      {/* <ProductContext.Provider value={products}> */}
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/contacts" element={<Contacts/>}/>
-          <Route path="/product/id/:id" element={<ProductSpec/>}/>
+          <Route path="/product/id/:artnr" element={<ProductSpec/>}/>
           
           <Route path="/categories" element={<Categories/>}/>
           <Route path="/products" element={<Products/>}/>
@@ -51,7 +86,7 @@ function App() {
 
           <Route path="*" element={<NotFound/>}/>
         </Routes>        
-      </ProductContext.Provider>
+      {/* </ProductContext.Provider> */}
     </BrowserRouter>
   );
 }

@@ -25,10 +25,10 @@
     }
 }
 
-.footer-shirt-page{
-    position: absolute;
+.footer-short-page{
+
+    position: fixed;
     bottom:0;
-    width: 100%;
 
     @include lg {
         position: static;

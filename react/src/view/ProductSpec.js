@@ -1,18 +1,22 @@
 import React from 'react'
+import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import Footer from '../sections/Footer';
 import Navigationbar from './../sections/Navigationbar'; 
 import BreadCrumb from '../sections/BreadCrumb';
-import ProductImgGrid from '../sections/productspecification/ProductImgGrid';
+import ProductSpecifics from '../sections/productspecification/ProductSpecifics';
+import { ProductContext } from '../assets/Context/Context'
 
-const ProductSpec = () => {
+export const ProductSpec = () => {
+
+  const {artnr} = useParams ();
+  // const productContext = useContext(ProductContext)
 
   return (
     <>
       <Navigationbar/>
       <BreadCrumb currentPage="Product Details" comersial="Get 25% OFF at the Fixxo Selection - Shop Now!"/>
-      <div className="container">
-        <ProductImgGrid/>
-      </div>
+      <ProductSpecifics />
       <Footer shortSite={true}/>
     </> 
   )
