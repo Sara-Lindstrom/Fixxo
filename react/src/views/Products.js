@@ -1,9 +1,9 @@
 import React from 'react'
-import Footer from '../../components/Footer';
-import Navigationbar from './../../components/Navigationbar'; 
-import BreadCrumb from '../../components/BreadCrumb';
-import ProductGrid from '../../components/ProductGrid';
-import {UseGetAllProducts} from '../../Hooks/UseGetAllProducts'
+import Footer from '../components/Footer';
+import Navigationbar from '../components/Navigationbar'; 
+import BreadCrumb from '../components/BreadCrumb';
+import ProductGrid from '../components/ProductGrid';
+import {UseGetAllProducts} from '../Hooks/UseGetAllProducts'
 
 const ProductBrowse = () => {
     

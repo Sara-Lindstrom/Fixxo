@@ -83,6 +83,7 @@ const ContactForm = () => {
 
         if(validName === true && validEmail === true && validComment === true){
 
+            // submit to api init
             let json = JSON.stringify({"name":contactForm.name, "email":contactForm.email, "comments":contactForm.comment})
 
             setContactForm ({name: '', email: '', comment: ''})
@@ -90,6 +91,7 @@ const ContactForm = () => {
             setEmailError ('')
             setCommentError ('')
 
+            // if submit success/failed
             if (await submitData ('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', json,)) {
                 setCanSubmit (true)
                 setFailedSubmit (false)
@@ -110,24 +112,21 @@ const ContactForm = () => {
   return (
     <section className="container">
         {
-            // if for message when correct submittion
-            canSubmit?
-            (
+            // message when submittion success
+            canSubmit &&
                 <div className="alert alert-success text-center submitted-comment" role="alert">
                     <h2>Thank You For Your Comment!</h2>
                     <p>We Will Contact You As Soon As Possible.</p>
                 </div>
-            ) : (<></>) 
         }
 
         {
-            failedSubmit?
-            (
+            // message when submittion failed
+            failedSubmit &&
                 <div className="alert alert-danger text-center submitted-comment-fail" role="alert">
                     <h2>Oops!</h2>
                     <p>Something went Wrong. We couldn't receive your comment right now.</p>
                 </div>
-            ) : (<></>) 
         }
             
             

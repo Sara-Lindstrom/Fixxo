@@ -6,7 +6,7 @@ import ProductSpec from './views/ProductDetails/ProductSpec';
 import NotFound from './views/NotFound';
 
 import Categories from './views/inaktive/Categories';
-import Products from './views/inaktive/Products';
+import Products from './views/Products';
 import Search from './views/inaktive/Search';
 import Share from './views/inaktive/Share';
 import ShoppingCart from './views/inaktive/ShoppingCart';

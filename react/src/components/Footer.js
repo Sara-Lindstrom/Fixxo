@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = ({shortSite}) => {
+const Footer = () => {
   return (
     <footer className="footer-background">
       <div className="social-media-links">

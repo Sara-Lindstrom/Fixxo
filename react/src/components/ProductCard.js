@@ -34,6 +34,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
                     <li><RoundButtonImg onClickEvent={addTocart} image={cartIcon}></RoundButtonImg></li>
                 </ul>
 
+                {/* button to relocate to productdetails */}
                 <button className="button theme-button"><NavLink className="theme-button-link" to={`/product/id/${item.articleNumber}`}>QUICK&nbsp;VIEW</NavLink></button>
             </div>
         </div>
