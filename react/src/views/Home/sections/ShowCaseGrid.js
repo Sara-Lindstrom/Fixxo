@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductGrid from '../../../components/ProductGrid';
 
-const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => {
+const ShowCaseGrid = ({leftImg, leftAlt, col, item = [], rightImg, rightAlt}) => {
 
 
   const leftShow = leftImg !== "" ? true : false;
@@ -21,7 +21,7 @@ const ShowCaseGrid = ({leftImg, leftAlt, col, products, rightImg, rightAlt}) => 
       </div>
 
       {/* card grid */}
-      <ProductGrid title={""} products={products} col={col}/>
+      <ProductGrid title={""} items={item} col={col}/>
 
       {/* if right image is active */}
       <div className={rightShow ? "group" : "d-none"}>

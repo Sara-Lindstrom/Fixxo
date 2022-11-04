@@ -5,11 +5,11 @@ import BreadCrumb from '../../components/BreadCrumb';
 import ProductDetails from '../ProductDetails/Sections/ProductDetails';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductContext } from '../../assets/Context/Context';
+import { allContext } from '../../assets/Context/Context';
 
 const ProductSpec = () => {
 
-  const productContext = useContext(ProductContext)
+  const productContext = useContext(allContext)
   const  params  = useParams()
 
   const aktiveProduct = productContext.all.find (async obj => {

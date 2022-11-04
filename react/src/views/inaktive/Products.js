@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Footer from '../../components/Footer';
 import Navigationbar from './../../components/Navigationbar'; 
 import BreadCrumb from '../../components/BreadCrumb';
 import ProductGrid from '../../components/ProductGrid';
-import { ProductContext } from '../../assets/Context/Context';
+import {UseGetAllProducts} from '../../Hooks/UseGetAllProducts'
 
 const ProductBrowse = () => {
     
-  const productContext = useContext(ProductContext)
+const allProducts = UseGetAllProducts()
 
     return (
         <>
@@ -15,7 +15,7 @@ const ProductBrowse = () => {
             <div className='wrapper'>
                 <Navigationbar/>
                 <BreadCrumb currentPage="Products"/>
-                <ProductGrid title="Products" col={"4"} items={productContext.all}/>  
+                <ProductGrid title="Products" col={"4"} items={allProducts}/>  
             </div>
                 <Footer/>
             </div>
