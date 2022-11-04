@@ -1,18 +1,18 @@
 import './css/App.min.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { useEffect, useState} from 'react';
-import Home from './view/Home';
-import Contacts from './view/Contacts';
-import ProductSpec from './view/ProductSpec';
-import NotFound from './view/NotFound';
+import Home from './views/Home/Home';
+import Contacts from './views/Contact/Contacts';
+import ProductSpec from './views/ProductDetails/ProductSpec';
+import NotFound from './views/NotFound';
 import { ProductContext } from './assets/Context/Context';
 
-import Categories from './view/inaktive/Categories';
-import Products from './view/inaktive/Products';
-import Search from './view/inaktive/Search';
-import Share from './view/inaktive/Share';
-import ShoppingCart from './view/inaktive/ShoppingCart';
-import Whishlist from './view/inaktive/Whishlist';
+import Categories from './views/inaktive/Categories';
+import Products from './views/inaktive/Products';
+import Search from './views/inaktive/Search';
+import Share from './views/inaktive/Share';
+import ShoppingCart from './views/inaktive/ShoppingCart';
+import Whishlist from './views/inaktive/Whishlist';
 function App() {
 
   //  USESTATE PRODUCTS
@@ -23,7 +23,8 @@ function App() {
 
   useEffect (() => {
     const fetchAllData = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+      let result = await fetch('https://localhost:7180/api/products')
+      console.log("fetchAllData");
       setProducts({...products, all: await result.json()})
     }
     fetchAllData()

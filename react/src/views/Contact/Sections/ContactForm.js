@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {submitData} from '../../assets/script/SubmitData'
+import {submitData} from '../../../assets/script/SubmitData'
 
 const ContactForm = () => {
     // useStates for validation

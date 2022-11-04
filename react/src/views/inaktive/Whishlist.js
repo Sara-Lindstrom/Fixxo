@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../../sections/Footer';
-import Navigationbar from './../../sections/Navigationbar'; 
+import Footer from '../../components/Footer';
+import Navigationbar from './../../components/Navigationbar'; 
 
 const Whishlist = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import salePlaceholder from '../../assets/img/sale.svg'
+import salePlaceholder from '../../../assets/img/sale.svg'
 
 const SaleShowcase = () => {
   return (

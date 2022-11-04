@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import Footer from '../../sections/Footer';
-import Navigationbar from './../../sections/Navigationbar'; 
-import BreadCrumb from '../../sections/BreadCrumb';
-import ProductGrid from '../../sections/home/ProductGrid';
+import Footer from '../../components/Footer';
+import Navigationbar from './../../components/Navigationbar'; 
+import BreadCrumb from '../../components/BreadCrumb';
+import ProductGrid from '../../components/ProductGrid';
 import { ProductContext } from '../../assets/Context/Context';
 
 const ProductBrowse = () => {

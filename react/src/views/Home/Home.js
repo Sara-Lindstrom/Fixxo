@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
-import Footer from '../sections/Footer';
-import ProductGrid from '../sections/home/ProductGrid';
-import Navigationbar from './../sections/Navigationbar'; 
-import Showcase from '../sections/home/Showcase';
-import FeaturedShowcase from '../sections/home/FeaturedShowcase';
-import ShoppingInfo from '../sections/home/ShoppingInfo';
-import ShowCaseGrid from '../sections/home/ShowCaseGrid';
-import ShowCaseGridPlaceholder from './../assets/img/flash-sale-show-case.svg'
-import SaleShowcase from '../sections/home/SaleShowcase';
-import CompanyInformation from '../sections/home/CompanyInformation';
-import CustomerService from "./../assets/img/customer-service-icon.svg";
-import CustomerSecurePayment from "./../assets/img/secured-payment-icon.svg";
-import CustomerDelivery from "./../assets/img/delivery-truck-icon.svg";
-import { ProductContext } from '../assets/Context/Context';
+import Footer from '../../components/Footer';
+import ProductGrid from '../../components/ProductGrid';
+import Navigationbar from '../../components/Navigationbar'; 
+import Showcase from '../Home/sections/Showcase';
+import FeaturedShowcase from '../Home/sections/FeaturedShowcase';
+import ShoppingInfo from '../Home/sections/ShoppingInfo';
+import ShowCaseGrid from '../Home/sections/ShowCaseGrid';
+import ShowCaseGridPlaceholder from '../../assets/img/flash-sale-show-case.svg'
+import SaleShowcase from '../Home/sections/SaleShowcase';
+import CompanyInformation from '../Home/sections/CompanyInformation';
+import CustomerService from "../../assets/img/customer-service-icon.svg";
+import CustomerSecurePayment from "../../assets/img/secured-payment-icon.svg";
+import CustomerDelivery from "../../assets/img/delivery-truck-icon.svg";
+import { ProductContext } from '../../assets/Context/Context';
 
 const Home = () => {
 

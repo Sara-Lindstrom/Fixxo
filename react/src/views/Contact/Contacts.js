@@ -1,9 +1,9 @@
 import React from 'react'
-import BreadCrumb from '../sections/BreadCrumb';
-import Footer from '../sections/Footer';
-import Navigationbar from './../sections/Navigationbar'; 
-import Map from './../sections/contact/Map';
-import ContactForm from '../sections/contact/ContactForm';
+import BreadCrumb from '../../components/BreadCrumb';
+import Footer from '../../components/Footer';
+import Navigationbar from '../../components/Navigationbar'; 
+import Map from '../Contact/Sections/Map';
+import ContactForm from '../Contact/Sections/ContactForm';
 
 const Contacts = () => {
   return (

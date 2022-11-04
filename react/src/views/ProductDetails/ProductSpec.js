@@ -1,11 +1,11 @@
 import React from 'react'
-import Footer from '../sections/Footer';
-import Navigationbar from './../sections/Navigationbar'; 
-import BreadCrumb from '../sections/BreadCrumb';
-import ProductDetails from '../sections/productspecification/ProductDetails';
+import Footer from '../../components/Footer';
+import Navigationbar from '../../components/Navigationbar'; 
+import BreadCrumb from '../../components/BreadCrumb';
+import ProductDetails from '../ProductDetails/Sections/ProductDetails';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductContext } from '../assets/Context/Context';
+import { ProductContext } from '../../assets/Context/Context';
 
 const ProductSpec = () => {
 
