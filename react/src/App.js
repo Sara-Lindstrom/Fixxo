@@ -11,24 +11,28 @@ import Search from './views/inaktive/Search';
 import Share from './views/inaktive/Share';
 import ShoppingCart from './views/inaktive/ShoppingCart';
 import Whishlist from './views/inaktive/Whishlist';
+import { ShoppingCartProvider } from './components/shoppingcart/ShoppingCartContext';
+
 function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/contacts" element={<Contacts/>}/>
-        <Route path="/product/id/:id" element={<ProductSpec/>}/>
-        
-        <Route path="/categories" element={<Categories/>}/>
-        <Route path="/products" element={<Products/>}/>
-        <Route path="/search" element={<Search/>}/>
-        <Route path="/share" element={<Share/>}/>
-        <Route path="/shoppingcart" element={<ShoppingCart/>}/>
-        <Route path="/whishlist" element={<Whishlist/>}/>
+      <ShoppingCartProvider>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
+          <Route path="/product/id/:id" element={<ProductSpec/>}/>
+          
+          <Route path="/categories" element={<Categories/>}/>
+          <Route path="/products" element={<Products/>}/>
+          <Route path="/search" element={<Search/>}/>
+          <Route path="/share" element={<Share/>}/>
+          <Route path="/shoppingcart" element={<ShoppingCart/>}/>
+          <Route path="/whishlist" element={<Whishlist/>}/>
 
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      </ShoppingCartProvider>
     </BrowserRouter>
   );
 }

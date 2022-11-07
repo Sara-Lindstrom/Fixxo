@@ -22,8 +22,8 @@ const Home = () => {
       <ProductGrid title={"Featured Products"} col={"4"} items={UseGetFeaturedProducts(8)}/>
       <FeaturedShowcase/>
       <ShoppingInfo/>
-      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} item={UseGetFeaturedProducts(4)}/>
-      <ShowCaseGrid leftImg={""} leftAlt={""}  col={2} rightImg={ShowCaseGridPlaceholder} rightAlt={"place holder"} item={UseGetFeaturedProducts(4)}/>
+      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} items={UseGetFeaturedProducts(4)}/>
+      <ShowCaseGrid leftImg={""} leftAlt={""}  col={2} rightImg={ShowCaseGridPlaceholder} rightAlt={"place holder"} items={UseGetFeaturedProducts(4)}/>
       <SaleShowcase/>
       <div className="container flex">
         <ProductGrid cardIsFlexed={true} title={"Latest Products"} col={"1"}items={UseGetFeaturedProducts(3)}/>
