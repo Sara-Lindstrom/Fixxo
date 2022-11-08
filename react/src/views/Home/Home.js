@@ -14,21 +14,24 @@ import CustomerDelivery from "../../assets/img/delivery-truck-icon.svg";
 import { UseGetFeaturedProducts } from '../../Hooks/UseGetFeaturedProducts';
 
 const Home = () => {
+  const feauredProduct8 = UseGetFeaturedProducts(8)
+  const feauredProduct4 = UseGetFeaturedProducts(4)
+  const feauredProduct3 = UseGetFeaturedProducts(3)
 
   return (
     <>
       <Navigationbar />
       <Showcase />
-      <ProductGrid title={"Featured Products"} col={"4"} items={UseGetFeaturedProducts(8)}/>
+      <ProductGrid title={"Featured Products"} col={"4"} items={feauredProduct8}/>
       <FeaturedShowcase/>
       <ShoppingInfo/>
-      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} items={UseGetFeaturedProducts(4)}/>
-      <ShowCaseGrid leftImg={""} leftAlt={""}  col={2} rightImg={ShowCaseGridPlaceholder} rightAlt={"place holder"} items={UseGetFeaturedProducts(4)}/>
+      <ShowCaseGrid leftImg={ShowCaseGridPlaceholder} leftAlt={"place holder"} col={2} rightImg={""} rightAlt={""} items={feauredProduct4}/>
+      <ShowCaseGrid leftImg={""} leftAlt={""}  col={2} rightImg={ShowCaseGridPlaceholder} rightAlt={"place holder"} items={feauredProduct4}/>
       <SaleShowcase/>
       <div className="container flex">
-        <ProductGrid cardIsFlexed={true} title={"Latest Products"} col={"1"}items={UseGetFeaturedProducts(3)}/>
-        <ProductGrid cardIsFlexed={true} title={"Best Selling Products"} col={"1"}items={UseGetFeaturedProducts(3)}/>
-        <ProductGrid cardIsFlexed={true} title={"Top Reacted Products"} col={"1"}items={UseGetFeaturedProducts(3)}/>
+        <ProductGrid cardIsFlexed={true} title={"Latest Products"} col={"1"}items={feauredProduct3}/>
+        <ProductGrid cardIsFlexed={true} title={"Best Selling Products"} col={"1"}items={feauredProduct3}/>
+        <ProductGrid cardIsFlexed={true} title={"Top Reacted Products"} col={"1"}items={feauredProduct3}/>
       </div>    
       <hr className="container line-break"/> 
       <div className="container contact-info">

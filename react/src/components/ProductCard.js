@@ -4,20 +4,11 @@ import cartIcon from '../assets/img/cart-icon.svg';
 import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import { NavLink } from 'react-router-dom';
+import { UseShoppingCart } from './shoppingcart/ShoppingCartContext';
 
 const ProductCard = ({item, cardIsFlexed}) => {
 
-    const addToWhishlist = (e) => {
-        (console.log(`added to whish list`))
-    }
-
-    const addToCompare = (e) => {
-        (console.log("added to compare"))
-    }
-
-    const addTocart = (e) => {
-        (console.log("added to cart"))
-    }
+    const { incrementQuantity } = UseShoppingCart()
 
   return (
     // card core
@@ -29,9 +20,9 @@ const ProductCard = ({item, cardIsFlexed}) => {
             {/* options and availability */}
             <div className="card-options">
                 <ul>
-                    <li><RoundButtonImg onClickEvent={addToWhishlist} image={wishlistIcon}></RoundButtonImg></li>
-                    <li><RoundButtonImg onClickEvent={addToCompare} image={compareIcon}></RoundButtonImg></li>
-                    <li><RoundButtonImg onClickEvent={addTocart} image={cartIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg  image={wishlistIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg  image={compareIcon}></RoundButtonImg></li>
+                    <li><RoundButtonImg onClickEvent={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} image={cartIcon}></RoundButtonImg></li>
                 </ul>
 
                 {/* button to relocate to productdetails */}

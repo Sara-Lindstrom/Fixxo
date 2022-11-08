@@ -3,7 +3,7 @@ import ShoppingCart from "./ShoppingCart";
 
 const ShoppingCartContext = createContext()
 
-export const useShoppingcart = () => {
+export const UseShoppingCart = () => {
     return useContext (ShoppingCartContext)
 }
 
@@ -11,8 +11,8 @@ export const ShoppingCartProvider = ({children}) => {
 
     const [cartItem, setCartItem] = useState ([])
 
-    const CartQuantity = cartItem.reduce(
-        (quantity, item) => quantity + item.quantity, 0 
+    const cartQuantity = cartItem.reduce(
+        (quantity, item) => item.quantity + quantity, 0 
     )
 
     const getItemQuantity = (articleNumber) => {
@@ -23,13 +23,13 @@ export const ShoppingCartProvider = ({children}) => {
         const {articleNumber, product} = cartItem
 
         setCartItem ( items => {
-            if (items.find (item => item.articleNumber === articleNumber) == null){
-                return [...items, {articleNumber, product, quantity:1}]
+            if (items.find(item => item.articleNumber === articleNumber) == null){
+                return [...items, { articleNumber, product, quantity: 1 }]
             }
-            else {
-                return items.map (item => {
+            else{
+                return items.map(item => {
                     if (item.articleNumber === articleNumber) {
-                       return {...items, quantity: item.quantity +1} 
+                       return {...item, quantity: item.quantity +1} 
                     }
                     else {
                         return item
@@ -50,7 +50,7 @@ export const ShoppingCartProvider = ({children}) => {
             else {
                 return items.map (item => {
                     if (item.articleNumber === articleNumber) {
-                       return {...items, quantity: item.quantity -1} 
+                       return {...item, quantity: item.quantity -1} 
                     }
                     else {
                         return item
@@ -67,7 +67,7 @@ export const ShoppingCartProvider = ({children}) => {
         })
     }
 
-    return <ShoppingCartContext.Provider value={{cartItem, CartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem}}>
+    return <ShoppingCartContext.Provider value={{cartItem, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem}}>
         {children}
         <ShoppingCart/>
     </ShoppingCartContext.Provider>

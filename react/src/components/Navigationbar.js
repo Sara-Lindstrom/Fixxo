@@ -8,10 +8,12 @@ import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import cartIcon from '../assets/img/cart-icon.svg';
 import RoundButtonImg from '../components/RoundButtonImg';
 import { NavLink } from 'react-router-dom';
+import { UseShoppingCart } from './shoppingcart/ShoppingCartContext';
 
 const Navigationbar = () => {
 
   const [showMenu, setShowMenu] = useState(false)
+  const {cartQuantity} = UseShoppingCart()
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -44,7 +46,10 @@ const Navigationbar = () => {
             {/* account menu */}
             <RoundButtonImg link="/share" image={compareIcon}></RoundButtonImg> 
             <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={3}></RoundButtonImg>
-            <RoundButtonImg link="/shoppingcart" image={cartIcon} notificationNumber={12}></RoundButtonImg>
+            <button className="round-button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="offcanvasRight">
+              <span className="notification-pill badge rounded-pill">{cartQuantity}</span>
+              <img src={cartIcon} alt=""/>
+            </button> 
 
             <button onClick={toggleMenu} className="round-button dropdown-navigation-button"><i className="fa-regular fa-bars"></i></button>
         </nav>

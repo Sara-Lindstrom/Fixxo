@@ -1,0 +1,24 @@
+.shoppingcart{
+    width: 100vw!important;
+    border:none !important;
+    padding: 1rem;
+
+    @include md {
+        width: 50vw!important;
+        padding:1.5rem;
+    }
+
+    @include lg {
+        width: 40vw !important;
+    }
+
+    @include xl {
+        width: 30vw !important;
+    }
+
+    .shoppingcart-title{
+        .cart-img{
+            padding-right: 1rem;
+        }
+    }
+}
