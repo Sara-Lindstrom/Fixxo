@@ -10,6 +10,7 @@ import { currencyFormatter } from '../assets/utilities/currencyFormatter';
 const ProductCard = ({item, cardIsFlexed}) => {
 
     const { incrementQuantity } = UseShoppingCart()
+    
 
   return (
     // card core
