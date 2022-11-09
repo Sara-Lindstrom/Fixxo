@@ -5,6 +5,7 @@ import compareIcon from '../assets/img/compare-icon.svg';
 import wishlistIcon from '../assets/img/wishlist-icon.svg';
 import { NavLink } from 'react-router-dom';
 import { UseShoppingCart } from './shoppingcart/ShoppingCartContext';
+import { currencyFormatter } from '../assets/utilities/currencyFormatter';
 
 const ProductCard = ({item, cardIsFlexed}) => {
 
@@ -41,7 +42,7 @@ const ProductCard = ({item, cardIsFlexed}) => {
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-regular fa-star"></i>
             </div>
-            <p className="original-price">{item.price}</p>
+            <p className="original-price">{currencyFormatter(item.price)}</p>
         </div> 
     </div>   
   )

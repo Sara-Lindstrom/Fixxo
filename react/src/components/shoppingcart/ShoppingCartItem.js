@@ -1,4 +1,5 @@
 import React from 'react'
+import { currencyFormatter } from '../../assets/utilities/currencyFormatter'
 import { UseShoppingCart } from '../shoppingcart/ShoppingCartContext'
 
 const ShoppingCartItem = ({item}) => {
@@ -11,18 +12,20 @@ const ShoppingCartItem = ({item}) => {
             <img src={item.product.imageName} alt={item.product.name}/>
         </div>
         <div className='item-title'>
-            {item.name}
+            {item.product.name}
         </div>
         <div className='item-quantity'>
-            <button onClick={() => decrementQuantity(item)} className='round-button'>-</button>
+            <button onClick={() => decrementQuantity(item)} className='cart-button'>-</button>
             <span>{item.quantity}</span>
-            <button onClick={() => incrementQuantity(item)} className='round-button'>+</button>
-        </div>
+            <button onClick={() => incrementQuantity(item)} className='cart-button'>+</button>
+        </div>        
         <div className='item-price'>
-            <div>{item.product.price * item.quantity}</div>
-            <button onClick={() => removeItem(item.articleNumber)}><i className="fa-regular fa-trash"></i></button>
+            <div>{currencyFormatter(item.product.price * item.quantity)}</div>
+        </div>        
+        <div className='cart-trash'>
+        <button className='cart-button' onClick={() => removeItem(item.articleNumber)}><i className="fa-regular fa-trash"></i></button>             
         </div>
-
+           
     </div>
   )
 }
