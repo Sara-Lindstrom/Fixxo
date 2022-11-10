@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { currencyFormatter } from '../../../assets/utilities/currencyFormatter'
-import RoundButtonicon from '../../../components/RoundButtonIcon'
 
 const ProductDetails = ({item}) => {
 
   const [countAmount, setCountAmount] = useState(0)
+  const [showMore, setShowMore] = useState(false)
+
+  const text = "Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly."
   
 
   // https://stackoverflow.com/questions/47287177/how-to-loop-over-a-number-in-react-inside-jsx
@@ -21,6 +23,7 @@ const ProductDetails = ({item}) => {
     }
     return stars
   }
+
 
   return (
     <>
@@ -39,11 +42,19 @@ const ProductDetails = ({item}) => {
             <img className='product-detail-img' src={item.imageName} alt={item.name}/>             
           </div>
         </div>
+
         <div className='info-box'>
           <h2 className='title'>{item.name}</h2>
           <span className='rating'>{rating(item.rating)}</span>
           <p className='price'>{currencyFormatter(item.price)}</p>
-          <p className='description'>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.</p>
+
+          <div className='description'>
+            {/* https://dev.to/muratcanyuksel/code-list-items-with-show-moreless-functionality-in-react-22k0 */}
+            {showMore ? text : `${text.substring(0, 214)}`}
+            <button className="Show-button" onClick={() => setShowMore(!showMore)}>
+              {showMore ? " ( Show Less )" : " ( Show More )"}
+            </button>
+          </div>
 
           <form noValidate className='product-form'>
             <div className="size-box">

@@ -29,6 +29,10 @@
     color: $color-dark;
     margin-bottom: 5rem;
 
+    .active {
+        color: $color-dark;
+    }
+
     @include md {
         font-size: $font-size-16;
     }

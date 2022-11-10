@@ -6,6 +6,7 @@ import ProductDetails from '../ProductDetails/Sections/ProductDetails';
 import UseGetProduct from '../../Hooks/UseGetPrudoctDetails';
 import { useParams } from 'react-router-dom';
 import ProductInformation from './Sections/ProductInformation';
+import RelatedProducts from './Sections/RelatedProducts';
 
 const ProductSpec = () => {
   const {id} = useParams()
@@ -17,6 +18,7 @@ const ProductSpec = () => {
       <BreadCrumb currentPage="Product Details" comersial="Get 25% OFF at the Fixxo Selection - Shop Now!"/>
       <ProductDetails item={Product}/>
       <ProductInformation/>
+      <RelatedProducts/>
       <Footer/>
     </> 
   )

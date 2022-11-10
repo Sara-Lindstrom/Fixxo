@@ -64,14 +64,15 @@
         .description{
             font-size: $font-size-16;
             font-weight: $font-weight-regular;
-            max-height: 8.5rem;
             padding-right:1.5rem;
-            overflow: scroll;
             margin: 2rem auto;
 
-            @include md {
-                max-height: fit-content;
-
+            .Show-button{
+                border:none;
+                background-color: white;
+                color: $color-theme;
+                margin: 0;
+                padding: 0;
             }
         }
 
