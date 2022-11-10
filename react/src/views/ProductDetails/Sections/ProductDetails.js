@@ -24,43 +24,43 @@ const ProductDetails = ({item}) => {
 
   return (
     <>
-      <div className='container d-flex'>
+      <div className='container product-detail-container'>
         <div className='img-grid'>
           <div className='big-image-box'>
             <img className='product-detail-img' src={item.imageName} alt={item.name}/>  
           </div>
           <div className='small-image-box'>
-            <img className='product-detail-img' src={item.imageName} alt={item.name}/>   
-            <img className='product-detail-img' src={item.imageName} alt={item.name}/>     
-            <img className='product-detail-img' src={item.imageName} alt={item.name}/>            
+            <img className='product-detail-img' src={item.imageName} alt={item.name}/>             
+          </div>
+          <div className='small-image-box'>
+            <img className='product-detail-img' src={item.imageName} alt={item.name}/>             
+          </div>
+          <div className='small-image-box'>
+            <img className='product-detail-img' src={item.imageName} alt={item.name}/>             
           </div>
         </div>
         <div className='info-box'>
           <h2 className='title'>{item.name}</h2>
-          <span>{rating(item.rating)}</span>
-          <p>{currencyFormatter(item.price)}</p>
-          <p>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.</p>
+          <span className='rating'>{rating(item.rating)}</span>
+          <p className='price'>{currencyFormatter(item.price)}</p>
+          <p className='description'>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.</p>
 
-          <form noValidate>
-            <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-              <p>Size:</p>
-              <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off"/>
-              <label className="btn btn-outline-primary" htmlFor="btnradio1">S</label>
+          <form noValidate className='product-form'>
+            <div className="size-box">
+              <p className='label'>Size:</p>
 
-              <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autoComplete="off"/>
-              <label className="btn btn-outline-primary" htmlFor="btnradio2">M</label>
-
-              <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autoComplete="off"/>
-              <label className="btn btn-outline-primary" htmlFor="btnradio3">L</label>
-
-              <input type="radio" className="btn-check" name="btnradio" id="btnradio4" autoComplete="off"/>
-              <label className="btn btn-outline-primary" htmlFor="btnradio4">X</label>
+              <div className='button-box'>
+                <button to="/" type="radio" className="size-option" name='size-radio'>S</button>
+                <button to="/" type="radio" className="size-option" name='size-radio'>M</button>
+                <button to="/" type="radio" className="size-option" name='size-radio'>L</button>
+                <button to="/" type="radio" className="size-option" name='size-radio'>X</button>                
+              </div>
             </div>   
 
             <div className='color-option'>
-              <p>Color:</p>
+              <p className='label'>Color:</p>
               <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="dropdown-toggle color-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown button
                 </button>
                 <ul className="dropdown-menu">
@@ -70,21 +70,33 @@ const ProductDetails = ({item}) => {
                 </ul>
               </div>
             </div>
+
             <div className='quantity-option'>
-              <button type='button' onClick={()=>setCountAmount(countAmount +1)}>+</button>
-              <p>{countAmount}</p>
-              <button  type='button' onClick={()=> countAmount>0 ? setCountAmount(countAmount -1) : {}}>-</button>
+              <p className='label'>Quantity:</p>
+
+              <div className='counter'>
+                <button className='counter-button' type='button' onClick={()=>setCountAmount(countAmount +1)}>+</button>
+                <p className='count-amount'>{countAmount}</p>
+                <button  className='counter-button' type='button' onClick={()=> countAmount>0 ? setCountAmount(countAmount -1) : {}}>-</button>
+              </div>
             </div>  
-            <button type='submit' className='theme-button button'>ADD TO CART</button>
+
+            <div className='product-submit-button-option'>
+              <button type='submit' className='theme-button button product-submit-button'>ADD TO CART</button>              
+            </div>
+            
           </form>
 
           <div className='share-options'>
-            <p>Share:</p>
-            <RoundButtonicon icon={"fa-brands fa-facebook-f"}></RoundButtonicon>
-            <RoundButtonicon icon={"fa-brands fa-instagram"}></RoundButtonicon>
-            <RoundButtonicon icon={"fa-brands fa-twitter"}></RoundButtonicon>
-            <RoundButtonicon icon={"fa-brands fa-google"}></RoundButtonicon>
-            <RoundButtonicon icon={"fa-brands fa-linkedin"}></RoundButtonicon>
+            <p className='label'>Share:</p>
+            <div className='social-media-options'>
+              <button className='round-button social-media-button'><i className='fa-brands fa-facebook-f'></i></button>
+              <button className='round-button social-media-button'><i className='fa-brands fa-instagram'></i></button>
+              <button className='round-button social-media-button'><i className='fa-brands fa-twitter'></i></button>
+              <button className='round-button social-media-button'><i className='fa-brands fa-google'></i></button>
+              <button className='round-button social-media-button'><i className='fa-brands fa-linkedin'></i></button>      
+            </div>
+
           </div>
         </div>
       </div>

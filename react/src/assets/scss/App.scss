@@ -9,6 +9,7 @@
 @import "./components/navigationbar";
 @import "./components/footer.scss";
 @import "./components/shoppingCart";
+@import "./components/breadcrumb";
 
 // HOMEVIEW
 @import "./homeview/showcase.scss";
@@ -19,9 +20,10 @@
 @import "./homeview/companyInformation";
 
 // CONTACT
-@import "./contactview/breadcrumb";
+
 @import "./contactview/map";
 @import "./contactview/contactForm";
 
 // PRODUCT SPECIFICATION
 @import "./productspecification/productDetails";
+@import "./productspecification/productInformation";
