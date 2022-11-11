@@ -48,7 +48,7 @@ const ProductDetails = ({item}) => {
           <span className='rating'>{rating(item.rating)}</span>
           <p className='price'>{currencyFormatter(item.price)}</p>
 
-          <div className='description'>
+          <div className='description' data-TestId="show-more-text">
             {/* https://dev.to/muratcanyuksel/code-list-items-with-show-moreless-functionality-in-react-22k0 */}
             {showMore ? text : `${text.substring(0, 214)}`}
             <button className="Show-button" onClick={() => setShowMore(!showMore)}>
@@ -68,7 +68,7 @@ const ProductDetails = ({item}) => {
               </div>
             </div>   
 
-            <div className='color-option'>
+            {/* <div className='color-option'>
               <p className='label'>Color:</p>
               <div className="dropdown">
                 <button className="dropdown-toggle color-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,7 +80,7 @@ const ProductDetails = ({item}) => {
                   <li><NavLink className="dropdown-item" href="#">Something else here</NavLink></li>
                 </ul>
               </div>
-            </div>
+            </div> */}
 
             <div className='quantity-option'>
               <p className='label'>Quantity:</p>

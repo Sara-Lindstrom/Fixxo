@@ -4,7 +4,7 @@ import { UseShoppingCart } from '../shoppingcart/ShoppingCartContext'
 
 const ShoppingCartItem = ({item}) => {
 
-    const {incrementQuantity , decrementQuantity , removeItem} = UseShoppingCart()
+  const {incrementQuantity , decrementQuantity , removeItem} = UseShoppingCart()
 
   return (
     <div className='shoppin-cart-item'>
@@ -30,4 +30,8 @@ const ShoppingCartItem = ({item}) => {
   )
 }
 
+
+
+
 export default ShoppingCartItem
+
