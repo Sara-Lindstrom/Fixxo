@@ -21,12 +21,13 @@ const Navigationbar = () => {
 
   // ReactDOM.createPortal(<div></div>, document.getElementById()) (
     return(
+    <>
     <header className="container header">
       {/* LOGO */}
         <NavLink className="logo" to="/"><img src={fixxoLogo} alt="Fixxo."/></NavLink>
 
         {/* navigation menu*/}
-        <div className={`dropdown-navigation-menu ${ showMenu ? "d-grid" : ""}`}>        
+        <div className={`dropdown-navigation-menu ${ showMenu ? "d-grid" : ""}`}> 
           <nav className="navigation-menu">
               <NavLink className="navigation-menu-item" to="/" end>Home</NavLink>
               <NavLink className="navigation-menu-item" to="/categories" end>Categories</NavLink>
@@ -54,6 +55,10 @@ const Navigationbar = () => {
             <button onClick={toggleMenu} className="round-button dropdown-navigation-button"><i className="fa-regular fa-bars"></i></button>
         </nav>
     </header>
+    <div className={`container dropdown-navigation-menu ${ showMenu ? "d-grid  background-container " : ""}`}>
+      <div className='background-div'></div>
+    </div>
+  </>
   )
 }
 
