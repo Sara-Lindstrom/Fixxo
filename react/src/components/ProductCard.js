@@ -10,6 +10,21 @@ import { currencyFormatter } from '../assets/utilities/currencyFormatter';
 const ProductCard = ({item, cardIsFlexed}) => {
 
     const { incrementQuantity } = UseShoppingCart()
+
+    
+    // https://stackoverflow.com/questions/47287177/how-to-loop-over-a-number-in-react-inside-jsx
+    const rating = (starRating) => {
+        let stars = []
+        for (let i = 0; i<starRating; i++){
+        stars.push(<i className="fa-solid fa-star"></i>)
+        }
+        if (stars.length<5){
+        for (let i = stars.length; i<5; i++){
+            stars.push(<i className="fa-regular fa-star"></i>)
+        }
+        }
+        return stars
+    }
     
 
   return (
@@ -36,14 +51,8 @@ const ProductCard = ({item, cardIsFlexed}) => {
         <div className="product-info">
             <p className="category">{item.category}</p>
             <h4 className="product-name">{item.name}</h4>
-            <div className="star-rating">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-regular fa-star"></i>
-            </div>
-            <p className="original-price">{currencyFormatter(item.price)}</p>
+            <div className='star-rating'>{rating(item.rating)}</div>
+            <span className="original-price">{currencyFormatter(item.price)}</span>
         </div> 
     </div>   
   )

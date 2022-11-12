@@ -13,7 +13,7 @@ const RelatedProducts = () => {
             {/* works but need to update page if breakpoint i changed */}
             { window.innerWidth < 960 ?
                 <div className="carousel-inner carousel-design">        
-                    <div className="carousel-item active ">
+                    <div className="carousel-item active">
                         <ProductGrid col={"2"} items={feauredProduct2}/>
                     </div>
                     <div className="carousel-item ">

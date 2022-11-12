@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { currencyFormatter } from '../../../assets/utilities/currencyFormatter'
 
 const ProductDetails = ({item}) => {

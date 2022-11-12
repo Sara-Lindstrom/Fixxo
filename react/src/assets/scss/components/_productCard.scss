@@ -80,6 +80,7 @@
 
     // product information
     .product-info {
+
         .category {
             font-size: $font-size-13;
             font-weight: $font-weight-medium;
@@ -126,12 +127,16 @@
             @include lg {
                 font-size: $font-size-18;
             }
+
+            .active{
+                color: $color-theme;
+            }
         } 
 
         .original-price {
             display:inline;
             font-size: $font-size-13;
-
+            color: $color-dark;
             
             @include md {
                 font-size: $font-size-16;   
