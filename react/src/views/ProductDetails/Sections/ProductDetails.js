@@ -6,9 +6,17 @@ const ProductDetails = ({item}) => {
 
   const [countAmount, setCountAmount] = useState(0)
   const [showMore, setShowMore] = useState(false)
+  const [colorPlacehoderOption, setColorPlacehoderOption] = useState ('Choose An Option')
 
   const text = "Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly."
-  
+
+  const changeColorOption = (e) => {
+    e.preventDefault();
+    let color = e.target.name
+    setColorPlacehoderOption(color)
+    return colorPlacehoderOption
+  } 
+
 
   // https://stackoverflow.com/questions/47287177/how-to-loop-over-a-number-in-react-inside-jsx
   const rating = (starRating) => {
@@ -68,19 +76,17 @@ const ProductDetails = ({item}) => {
               </div>
             </div>   
 
-            {/* <div className='color-option'>
+            <div className='color-option'>
               <p className='label'>Color:</p>
               <div className="dropdown">
-                <button className="dropdown-toggle color-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button>
+                <button className="dropdown-toggle color-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >{colorPlacehoderOption}</button>
                 <ul className="dropdown-menu">
-                  <li><NavLink className="dropdown-item" href="#">Action</NavLink></li>
-                  <li><NavLink className="dropdown-item" href="#">Another action</NavLink></li>
-                  <li><NavLink className="dropdown-item" href="#">Something else here</NavLink></li>
+                  <li><button className="dropdown-item" onClick={changeColorOption} name="Olive">Olive</button></li>
+                  <li><button className="dropdown-item" onClick={changeColorOption} name="Sand">Sand</button></li>
+                  <li><button className="dropdown-item" onClick={changeColorOption} name="Blue">Blue</button></li>
                 </ul>
               </div>
-            </div> */}
+            </div>
 
             <div className='quantity-option'>
               <p className='label'>Quantity:</p>
