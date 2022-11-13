@@ -55,6 +55,7 @@ const Navigationbar = () => {
             <button onClick={toggleMenu} className="round-button dropdown-navigation-button"><i className="fa-regular fa-bars"></i></button>
         </nav>
     </header>
+    {/* Blurred background for navigation dropdown on smaller devices */}
     <div className={`dropdown-navigation-menu-background ${ showMenu ? "d-grid  background-container container" : ""}`}>
       <div className='background-div'></div>
     </div>
