@@ -5,10 +5,14 @@ import Navigationbar from './../../components/Navigationbar';
 const Categories = () => {
     return (
         <>
-            <Navigationbar/>
-            <Footer/>
+            <div className='footer-wrapper'>
+                <div className='wrapper'>
+                    <Navigationbar/>
+                </div>
+                <Footer/>
+            </div>
         </>
-        )
+    )
 }
 
 export default Categories

@@ -9,7 +9,6 @@ import Categories from './views/inaktive/Categories';
 import Products from './views/Products';
 import Search from './views/inaktive/Search';
 import Share from './views/inaktive/Share';
-import ShoppingCart from './views/inaktive/ShoppingCart';
 import Whishlist from './views/inaktive/Whishlist';
 import { ShoppingCartProvider } from './components/shoppingcart/ShoppingCartContext';
 
@@ -27,7 +26,6 @@ function App() {
           <Route path="/products" element={<Products/>}/>
           <Route path="/search" element={<Search/>}/>
           <Route path="/share" element={<Share/>}/>
-          <Route path="/shoppingcart" element={<ShoppingCart/>}/>
           <Route path="/whishlist" element={<Whishlist/>}/>
 
           <Route path="*" element={<NotFound/>}/>

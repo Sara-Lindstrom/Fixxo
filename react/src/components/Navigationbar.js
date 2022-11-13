@@ -46,7 +46,7 @@ const Navigationbar = () => {
 
             {/* account menu */}
             <RoundButtonImg link="/share" image={compareIcon}></RoundButtonImg> 
-            <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={3}></RoundButtonImg>
+            <RoundButtonImg link="/whishlist" image={wishlistIcon} notificationNumber={0}></RoundButtonImg>
             <button className="round-button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="offcanvasRight">
               <span className="notification-pill badge rounded-pill">{cartQuantity}</span>
               <img src={cartIcon} alt=""/>
@@ -55,7 +55,7 @@ const Navigationbar = () => {
             <button onClick={toggleMenu} className="round-button dropdown-navigation-button"><i className="fa-regular fa-bars"></i></button>
         </nav>
     </header>
-    <div className={`container dropdown-navigation-menu ${ showMenu ? "d-grid  background-container " : ""}`}>
+    <div className={`dropdown-navigation-menu-background ${ showMenu ? "d-grid  background-container container" : ""}`}>
       <div className='background-div'></div>
     </div>
   </>

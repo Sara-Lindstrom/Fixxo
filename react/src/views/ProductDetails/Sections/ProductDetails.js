@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { currencyFormatter } from '../../../assets/utilities/currencyFormatter'
 
+
 const ProductDetails = ({item}) => {
 
   const [countAmount, setCountAmount] = useState(0)
@@ -21,16 +22,15 @@ const ProductDetails = ({item}) => {
   const rating = (starRating) => {
     let stars = []
     for (let i = 0; i<starRating; i++){
-     stars.push(<i className="fa-solid fa-star"></i>)
+     stars.push(<i className="fa-solid fa-star" key={i}></i>)
     }
     if (stars.length<5){
       for (let i = stars.length; i<5; i++){
-        stars.push(<i className="fa-regular fa-star"></i>)
+        stars.push(<i className="fa-regular fa-star" key={i}></i>)
       }
     }
     return stars
   }
-
 
   return (
     <>
@@ -55,7 +55,7 @@ const ProductDetails = ({item}) => {
           <span className='rating'>{rating(item.rating)}</span>
           <p className='price'>{currencyFormatter(item.price)}</p>
 
-          <div className='description' data-TestId="show-more-text">
+          <div className='description' data-testid="show-more-text">
             {/* https://dev.to/muratcanyuksel/code-list-items-with-show-moreless-functionality-in-react-22k0 */}
             {showMore ? text : `${text.substring(0, 214)}`}
             <button className="Show-button" onClick={() => setShowMore(!showMore)}>
@@ -68,10 +68,10 @@ const ProductDetails = ({item}) => {
               <p className='label'>Size:</p>
 
               <div className='button-box'>
-                <button to="/" type="radio" className="size-option" name='size-radio'>S</button>
-                <button to="/" type="radio" className="size-option" name='size-radio'>M</button>
-                <button to="/" type="radio" className="size-option" name='size-radio'>L</button>
-                <button to="/" type="radio" className="size-option" name='size-radio'>X</button>                
+                <button type="button" className="size-option" name='size-button'>S</button>
+                <button type="button" className="size-option" name='size-button'>M</button>
+                <button type="button" className="size-option" name='size-button'>L</button>
+                <button type="button" className="size-option" name='size-button'>X</button>                
               </div>
             </div>   
 
@@ -80,9 +80,9 @@ const ProductDetails = ({item}) => {
               <div className="dropdown">
                 <button className="dropdown-toggle color-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >{colorPlacehoderOption}</button>
                 <ul className="dropdown-menu">
-                  <li><button className="dropdown-item" onClick={changeColorOption} name="Olive">Olive</button></li>
-                  <li><button className="dropdown-item" onClick={changeColorOption} name="Sand">Sand</button></li>
-                  <li><button className="dropdown-item" onClick={changeColorOption} name="Blue">Blue</button></li>
+                  <li key="Olive"><button className="dropdown-item" onClick={changeColorOption} name="Olive">Olive</button></li>
+                  <li key="Sand"><button className="dropdown-item" onClick={changeColorOption} name="Sand">Sand</button></li>
+                  <li key="Blue"><button className="dropdown-item" onClick={changeColorOption} name="Blue">Blue</button></li>
                 </ul>
               </div>
             </div>
@@ -98,7 +98,7 @@ const ProductDetails = ({item}) => {
             </div>  
 
             <div className='product-submit-button-option'>
-              <button type='submit' className='theme-button button product-submit-button'>ADD TO CART</button>              
+              <button type='button' className='theme-button button product-submit-button'>ADD TO CART</button>              
             </div>
             
           </form>

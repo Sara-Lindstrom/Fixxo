@@ -16,11 +16,11 @@ const ProductCard = ({item, cardIsFlexed}) => {
     const rating = (starRating) => {
         let stars = []
         for (let i = 0; i<starRating; i++){
-        stars.push(<i className="fa-solid fa-star"></i>)
+        stars.push(<i className="fa-solid fa-star" key={i}></i>)
         }
         if (stars.length<5){
         for (let i = stars.length; i<5; i++){
-            stars.push(<i className="fa-regular fa-star"></i>)
+            stars.push(<i className="fa-regular fa-star" key={i}></i>)
         }
         }
         return stars
